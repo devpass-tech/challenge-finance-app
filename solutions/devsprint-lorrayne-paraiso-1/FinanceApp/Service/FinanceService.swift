@@ -19,10 +19,10 @@ class FinanceService {
             do
             {
                 let resultHomeModel = try JSONDecoder().decode(HomeModel.self, from: data)
-                let result:[String] = resultHomeModel.activity.map({
+                let activityString :[String] = resultHomeModel.activity.map({
                     return $0.name
                 })
-                completion(result)
+                completion(activityString)
             }catch{
                 print(error.localizedDescription)
             }
