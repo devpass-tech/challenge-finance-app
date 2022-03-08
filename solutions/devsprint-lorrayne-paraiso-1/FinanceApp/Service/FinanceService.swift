@@ -8,9 +8,24 @@
 import Foundation
 
 class FinanceService {
+    
+    private let baseURL = "https://raw.githubusercontent.com/devpass-tech/challenge-finance-app/main/api/home_endpoint.json"
 
     func fetchHomeData(completion: @escaping ([String]) -> Void) {
-
-        completion(["Mall", "Food Court", "Oceanic Airlines", "Gym Membership", "Private Transport"])
+        guard let url = URL(string: baseURL) else {return}
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { return }
+            do
+            {
+                let resultHomeModel = try JSONDecoder().decode(HomeModel.self, from: data)
+                let result:[String] = resultHomeModel.activity.map({
+                    return $0.name
+                })
+                completion(result)
+            }catch{
+                print(error.localizedDescription)
+            }
+        }.resume()
     }
 }
