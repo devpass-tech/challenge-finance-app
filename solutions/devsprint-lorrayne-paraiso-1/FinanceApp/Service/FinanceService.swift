@@ -7,12 +7,19 @@
 
 import Foundation
 
+enum Endpoints {
+    static let homeModel = "api/home_endpoint.json"
+}
+
+enum ApiURL {
+    static let baseURL = "https://raw.githubusercontent.com/devpass-tech/challenge-finance-app/main/"
+}
+
 class FinanceService {
     
-    private let baseURL = "https://raw.githubusercontent.com/devpass-tech/challenge-finance-app/main/api/home_endpoint.json"
-
     func fetchHomeData(completion: @escaping ([String]) -> Void) {
-        guard let url = URL(string: baseURL) else {return}
+        
+        guard let url = URL(string: "\(ApiURL.baseURL)\(Endpoints.homeModel)") else {return}
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else { return }
