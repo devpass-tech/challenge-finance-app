@@ -8,5 +8,11 @@
 import Foundation
 
 struct HomeModel: Decodable {
+    
+    let activity: [Activity]
+}
 
+struct Activity: Decodable {
+
+    let name: String
 }
