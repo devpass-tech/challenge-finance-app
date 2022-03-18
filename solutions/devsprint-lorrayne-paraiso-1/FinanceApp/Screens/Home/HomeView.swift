@@ -9,22 +9,15 @@ import UIKit
 
 struct HomeViewConfiguration {
 
-    let activities: [String]
+    let homeData: HomeModel
 }
 
 final class HomeView: UIView {
-
-    private let listViewCellIdentifier = "ListViewCellIdentifier"
-
-    private var activities: [String] = []
-
-    private lazy var tableView: UITableView = {
-
-        let tableView = UITableView(frame: .zero)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
-        tableView.dataSource = self
-        return tableView
+    
+    let activityListView: ActivityListView = {
+        let activityListView = ActivityListView()
+        activityListView.translatesAutoresizingMaskIntoConstraints = false
+        return activityListView
     }()
 
     init() {
@@ -38,10 +31,9 @@ final class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func updateView(with activities: [String]) {
-
-        self.activities = activities
-        self.tableView.reloadData()
+    func updateView(with configuration: HomeViewConfiguration) {
+        self.activityListView.activities = configuration.homeData.activity
+        self.activityListView.tableView.reloadData()
     }
 }
 
@@ -56,34 +48,23 @@ private extension HomeView {
     }
 
     func configureSubviews() {
-
-        self.addSubview(self.tableView)
+        
+        self.addSubview(self.activityListView)
     }
 
     func configureSubviewsConstraints() {
+        
+        let estimatedHeight = CGFloat(activityListView.tableView.numberOfRows(inSection: 0))*ActivityListView.cellSize
 
         NSLayoutConstraint.activate([
-
-            self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+            self.activityListView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            self.activityListView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            self.activityListView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            self.activityListView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            
+            self.activityListView.widthAnchor.constraint(equalTo: safeAreaLayoutGuide.widthAnchor),
+            self.activityListView.heightAnchor.constraint(equalToConstant: estimatedHeight)
         ])
-    }
-}
-
-extension HomeView: UITableViewDataSource {
-
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return self.activities.count
-    }
-
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.activities[indexPath.row]
-        return cell
     }
 }
 
