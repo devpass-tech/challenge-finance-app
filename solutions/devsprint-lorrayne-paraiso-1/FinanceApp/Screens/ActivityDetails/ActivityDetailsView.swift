@@ -46,23 +46,33 @@ private extension ActivityDetailsView {
     
     
     func configureComponents() {
+        icon.translatesAutoresizingMaskIntoConstraints = false
         icon.image = UIImage(imageLiteralResourceName: "bag.circle.fill")
         icon.tintColor = .systemPurple
         icon.clipsToBounds = true
         icon.layer.masksToBounds = true
         icon.contentMode = .scaleAspectFill
         
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.font = UIFont.boldSystemFont(ofSize: 17)
         titleLabel.textColor = .black
+        titleLabel.textAlignment = .center
         
+        categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         categoryLabel.font = UIFont.systemFont(ofSize: 15)
         categoryLabel.textColor = .black.withAlphaComponent(0.6)
+        categoryLabel.textAlignment = .center
         
+        priceLabel.translatesAutoresizingMaskIntoConstraints = false
         priceLabel.font = UIFont.boldSystemFont(ofSize: 34)
-        priceLabel.textColor = .black.withAlphaComponent(0.6)
+        priceLabel.textColor = .black
+        priceLabel.textAlignment = .center
+       
         
+        timeLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.font = UIFont.systemFont(ofSize: 15)
         timeLabel.textColor = .black.withAlphaComponent(0.6)
+        timeLabel.textAlignment = .center
         
         reportButton.translatesAutoresizingMaskIntoConstraints = false
         reportButton.setTitle("Report a issue", for: .normal)
@@ -77,7 +87,7 @@ private extension ActivityDetailsView {
     func mockComponents(){
         titleLabel.text = "Mall"
         categoryLabel.text = "Shopping"
-        priceLabel.text = "R$100.00"
+        priceLabel.text = "$100.00"
         timeLabel.text = "8:57 AM"
     }
 
@@ -94,33 +104,33 @@ private extension ActivityDetailsView {
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
-//            self.icon.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-//            self.icon.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-//            self.icon.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-//
-//            self.titleLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-//            self.titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-//            self.titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
-//
-//            self.categoryLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-//            self.categoryLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-//            self.categoryLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-//            self.categoryLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
-//
-//            self.priceLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-//            self.priceLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            self.priceLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            self.icon.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            self.icon.centerXAnchor.constraint(equalTo: centerXAnchor),
+            self.icon.heightAnchor.constraint(equalToConstant: 100.0),
+            self.icon.widthAnchor.constraint(equalToConstant: 100.0),
 
-//            self.timeLabel.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-//            self.timeLabel.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-//            self.timeLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
-//            self.timeLabel.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            self.titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 156.0),
+            self.titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -156.0),
+            self.titleLabel.topAnchor.constraint(equalTo: self.icon.bottomAnchor, constant: 8.0),
             
-            self.reportButton.centerXAnchor.constraint(equalTo: safeAreaLayoutGuide.centerXAnchor),
-            self.reportButton.centerYAnchor.constraint(equalTo: safeAreaLayoutGuide.centerYAnchor),
-            self.priceLabel.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 24),
-            self.reportButton.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor, constant: 20),
-            self.reportButton.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor, constant: -20)
+            self.categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0.0),
+            self.categoryLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0.0),
+            self.categoryLabel.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 8.0),
+            
+
+            self.priceLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0.0),
+            self.priceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0.0),
+            self.priceLabel.topAnchor.constraint(equalTo: self.categoryLabel.bottomAnchor, constant: 132.0),
+            
+
+            self.timeLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0.0),
+            self.timeLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0.0),
+            self.timeLabel.topAnchor.constraint(equalTo: self.priceLabel.bottomAnchor, constant: 8.0),
+            
+            self.reportButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20.0),
+            self.reportButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.0),
+            self.reportButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -36),
+            self.reportButton.heightAnchor.constraint(equalToConstant: 56.0)
         ])
     }
 }
