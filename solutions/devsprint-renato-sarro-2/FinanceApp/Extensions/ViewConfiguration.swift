@@ -18,6 +18,6 @@ extension ViewConfiguration {
     func setupViews() {
         configViews()
         buildViews()
-        setupViews()
+        setupConstraints()
     }
 }
