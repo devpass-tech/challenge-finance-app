@@ -16,6 +16,11 @@ class HomeViewController: UIViewController {
         let homeView = HomeView()
         return homeView
     }()
+    
+    
+    
+    
+//    lazy var savingsLabel:
 
     override func viewDidLoad() {
 

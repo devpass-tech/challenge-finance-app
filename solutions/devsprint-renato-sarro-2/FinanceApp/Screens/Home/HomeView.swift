@@ -12,10 +12,86 @@ struct HomeViewConfiguration {
     let activities: [String]
 }
 
-final class HomeView: UIView {
-
+final class HomeView: UIView{
+    
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
+    lazy var headerStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    lazy var amountLabel: UILabel = {
+        let label =  UILabel()
+        label.text = "$15,459.27"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var savingsStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        return stackView
+    }()
+    
+    lazy var savingsView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .green
+        view.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        view.layer.cornerRadius = 12
+        return view
+    }()
+    
+    lazy var savingsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Savings"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var amountSavingsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "$1000"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var spendingStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        return stackView
+    }()
+    
+    lazy var spendingView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        view.frame = CGRect(x:0, y: 0, width: 24, height: 24)
+        view.layer.cornerRadius = 12
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var spendingLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Spending"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var amountSpedingLabel: UILabel = {
+        let label = UILabel()
+        label.text = "$500"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    lazy var activityLabel: UILabel = {
+        let label = UILabel()
+        return label
+    }()
+    
     private var activities: [String] = []
 
     private lazy var tableView: UITableView = {
