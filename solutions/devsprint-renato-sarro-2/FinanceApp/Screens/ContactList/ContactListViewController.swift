@@ -11,5 +11,7 @@ class ContactListViewController: UIViewController {
 
     override func loadView() {
         self.view = ContactListView()
+        
+        navigationItem.title = "Contact List"
     }
 }
