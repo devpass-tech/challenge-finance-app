@@ -24,6 +24,10 @@ class FinanceService {
         
         task.resume()
     }
+    
+    func fetchContactList() {
+        
+    }
 }
 
 extension FinanceService {
