@@ -33,6 +33,9 @@
 		989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989627DF27ADC2F60009A07F /* DebugViewController.swift */; };
 		98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4D827C8152200A630ED /* String+Extensions.swift */; };
 		98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */; };
+		BEDCBF4F27EBAD4300F0820E /* URLSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDCBF4E27EBAD4300F0820E /* URLSessionManager.swift */; };
+		BEDCBF5127EBB74E00F0820E /* PathStringsRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDCBF5027EBB74E00F0820E /* PathStringsRequests.swift */; };
+		BEDCBF5427EBB7B500F0820E /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDCBF5327EBB7B500F0820E /* NetworkTests.swift */; };
 		BEF965B027E947DF0003F960 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +87,9 @@
 		989627DF27ADC2F60009A07F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		98C8A4D827C8152200A630ED /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		BEDCBF4E27EBAD4300F0820E /* URLSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionManager.swift; sourceTree = "<group>"; };
+		BEDCBF5027EBB74E00F0820E /* PathStringsRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathStringsRequests.swift; sourceTree = "<group>"; };
+		BEDCBF5327EBB7B500F0820E /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,6 +141,7 @@
 		98584A6B277E32C30028DBEA /* FinanceApp */ = {
 			isa = PBXGroup;
 			children = (
+				BEDCBF4D27EBABCB00F0820E /* Network */,
 				98584A9D277E351B0028DBEA /* Resources */,
 				98584A9C277E350D0028DBEA /* AppDelegate */,
 				98584A9E277E35700028DBEA /* Screens */,
@@ -149,6 +156,7 @@
 		98584A82277E32C60028DBEA /* FinanceAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				BEDCBF5227EBB7A500F0820E /* Network */,
 				98584A83277E32C60028DBEA /* FinanceAppTests.swift */,
 			);
 			path = FinanceAppTests;
@@ -293,6 +301,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		BEDCBF4D27EBABCB00F0820E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BEDCBF4E27EBAD4300F0820E /* URLSessionManager.swift */,
+				BEDCBF5027EBB74E00F0820E /* PathStringsRequests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		BEDCBF5227EBB7A500F0820E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BEDCBF5327EBB7B500F0820E /* NetworkTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -429,6 +454,8 @@
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
+				BEDCBF4F27EBAD4300F0820E /* URLSessionManager.swift in Sources */,
+				BEDCBF5127EBB74E00F0820E /* PathStringsRequests.swift in Sources */,
 				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
 				989627DD27ADC2BC0009A07F /* HomeModel.swift in Sources */,
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
@@ -452,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEDCBF5427EBB7B500F0820E /* NetworkTests.swift in Sources */,
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

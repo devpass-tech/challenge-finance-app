@@ -8,11 +8,12 @@
 import Foundation
 
 class FinanceService {
+    var network = URLSessionManager()
 
     func fetchHomeData(completion: @escaping ([String]) -> Void) {
-
-        guard let url = URL(string: FinanceService.homeAPIPAth) else { return }
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        guard let url = URL(string: Path.homeAPI) else { return }
+        
+        network.fetch(with: url) { data, response, error in
             if let data = data, let homeData = try? JSONDecoder().decode(HomeModel.self, from: data) {
                 DispatchQueue.main.async {
                     completion(homeData.activity.map{$0.name})
@@ -21,14 +22,12 @@ class FinanceService {
                 print(error?.localizedDescription ?? "Erro")
             }
         }
-        
-        task.resume()
     }
     
     func transferAmount(completion: @escaping (Bool) -> Void) {
+        guard let url = URL(string: Path.transferResultAPI) else { return }
         
-        guard let url = URL(string: FinanceService.transferResultAPIPath) else { return }
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        network.fetch(with: url) { data, response, error in
             if let data = data, let transferResult = try? JSONDecoder().decode(TransferResult.self, from: data) {
                 DispatchQueue.main.async {
                     completion(transferResult.success)
@@ -37,16 +36,5 @@ class FinanceService {
                 print(error?.localizedDescription ?? "Erro")
             }
         }
-        
-        task.resume()
-        
     }
-    
-}
-
-extension FinanceService {
-    
-    static let homeAPIPAth = "https://raw.githubusercontent.com/devpass-tech/challenge-finance-app/main/api/home_endpoint.json"
-    static let transferResultAPIPath = "https://raw.githubusercontent.com/devpass-tech/challenge-finance-app/main/api/transfer_successful_endpoint.json"
-    
 }
