@@ -33,6 +33,7 @@
 		989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989627DF27ADC2F60009A07F /* DebugViewController.swift */; };
 		98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4D827C8152200A630ED /* String+Extensions.swift */; };
 		98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */; };
+		A491CDF627EB48CC00138800 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491CDF527EB48CC00138800 /* LoadingView.swift */; };
 		BEF965B027E947DF0003F960 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		989627DF27ADC2F60009A07F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		98C8A4D827C8152200A630ED /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		A491CDF527EB48CC00138800 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -253,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				981B4F5E27D9342C00603253 /* SampleView.swift */,
+				A491CDF527EB48CC00138800 /* LoadingView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -445,6 +448,7 @@
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
 				98584AED277E50430028DBEA /* UserProfileView.swift in Sources */,
+				A491CDF627EB48CC00138800 /* LoadingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
