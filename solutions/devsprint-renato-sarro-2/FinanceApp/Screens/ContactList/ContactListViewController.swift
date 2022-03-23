@@ -8,8 +8,16 @@
 import UIKit
 
 class ContactListViewController: UIViewController {
+    
+    private let service = FinanceService()
 
     override func loadView() {
         self.view = ContactListView()
+    }
+    
+    override func viewDidLoad() {
+        navigationItem.title = "Contact List"
+        
+        service.fetchContactList()
     }
 }

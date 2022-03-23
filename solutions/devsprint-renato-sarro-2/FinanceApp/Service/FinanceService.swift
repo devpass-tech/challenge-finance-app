@@ -25,6 +25,10 @@ class FinanceService {
         task.resume()
     }
     
+    func fetchContactList() {
+        
+    }
+  
     func transferAmount(completion: @escaping (Bool) -> Void) {
         
         guard let url = URL(string: FinanceService.transferResultAPIPath) else { return }
