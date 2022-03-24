@@ -7,10 +7,14 @@
 
 import UIKit
 
-class ContactListView: UIView {
+protocol ContactListViewProtocol {
+    func updateList(with list: [Contact])
+}
+
+class ContactListView: UIView, ContactListViewProtocol {
     
     // Fake Data
-    private let contacts: [Contact] = [Contact(name: "Ronald Robertson", phone: "+55 (11) 99999-9999"), Contact(name: "Ronald Robertson", phone: "+55 (11) 99999-9999")]
+    private var contacts: [Contact]
 
     lazy var tableView: UITableView = {
         let tableView = UITableView()
@@ -22,12 +26,20 @@ class ContactListView: UIView {
     }()
     
     init() {
+        contacts = []
+        
         super.init(frame: .zero)
+        
         setupViews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateList(with list: [Contact]) {
+        contacts = list
+        tableView.reloadData()
     }
     
 }
