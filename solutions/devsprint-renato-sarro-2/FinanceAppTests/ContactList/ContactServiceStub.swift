@@ -9,9 +9,9 @@ import Foundation
 
 @testable import FinanceApp
 
-struct FinanceServiceStub: FinanceServiceProtocol {
-    func fetchContactList(completion: @escaping ([Contact]) -> Void) {
-        completion([Contact(name: "Renato", phone: "+55 (11) 99999-9999"),
+struct ContactServiceStub: ContactServiceProtocol {
+    func getContacts(success: @escaping ([Contact]) -> Void, failure: @escaping (String) -> Void) {
+        success([Contact(name: "Renato", phone: "+55 (11) 99999-9999"),
                     Contact(name: "Ronald Robertson", phone: "+55 (11) 99999-9999")])
     }
 }

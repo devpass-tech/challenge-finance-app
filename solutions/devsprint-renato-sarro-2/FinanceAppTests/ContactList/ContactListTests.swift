@@ -15,7 +15,7 @@ class ContactListTests: XCTestCase {
     func test_ContactListInitialConfig() {
         
         let spy = ContactListSpy()
-        var sut: ContactListViewController = ContactListViewController(service: FinanceServiceStub())
+        var sut: ContactListViewController = ContactListViewController(service: ContactServiceStub())
         sut.mainView = spy
         
         sut.viewDidLoad()

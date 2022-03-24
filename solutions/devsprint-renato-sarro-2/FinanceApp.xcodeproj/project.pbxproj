@@ -10,7 +10,7 @@
 		3DF63A4727EA9F0500ED5D53 /* ContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF63A4627EA9F0500ED5D53 /* ContactCellView.swift */; };
 		3DF63A4927EAB46C00ED5D53 /* ContactListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF63A4827EAB46C00ED5D53 /* ContactListModel.swift */; };
 		517CB96C27EAA206008A36C0 /* TransferResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517CB96B27EAA206008A36C0 /* TransferResult.swift */; };
-		87DFDFC027ED26530007249B /* FinanceServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFBF27ED26530007249B /* FinanceServiceStub.swift */; };
+		87DFDFC027ED26530007249B /* ContactServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFBF27ED26530007249B /* ContactServiceStub.swift */; };
 		87DFDFC227ED28A40007249B /* ContactListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC127ED28A40007249B /* ContactListFactory.swift */; };
 		87DFDFC527ED29730007249B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC427ED29730007249B /* Network.swift */; };
 		87DFDFC727ED2E900007249B /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC627ED2E900007249B /* ContactService.swift */; };
@@ -65,7 +65,7 @@
 		3DF63A4627EA9F0500ED5D53 /* ContactCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellView.swift; sourceTree = "<group>"; };
 		3DF63A4827EAB46C00ED5D53 /* ContactListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListModel.swift; sourceTree = "<group>"; };
 		517CB96B27EAA206008A36C0 /* TransferResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferResult.swift; sourceTree = "<group>"; };
-		87DFDFBF27ED26530007249B /* FinanceServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceServiceStub.swift; sourceTree = "<group>"; };
+		87DFDFBF27ED26530007249B /* ContactServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactServiceStub.swift; sourceTree = "<group>"; };
 		87DFDFC127ED28A40007249B /* ContactListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListFactory.swift; sourceTree = "<group>"; };
 		87DFDFC427ED29730007249B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		87DFDFC627ED2E900007249B /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
@@ -141,7 +141,7 @@
 			children = (
 				87FECB7C27EBDBAF00A67AF8 /* ContactListSpy.swift */,
 				87FECB7E27EBDC0700A67AF8 /* ContactListTests.swift */,
-				87DFDFBF27ED26530007249B /* FinanceServiceStub.swift */,
+				87DFDFBF27ED26530007249B /* ContactServiceStub.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -499,7 +499,7 @@
 			files = (
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
 				87FECB7F27EBDC0700A67AF8 /* ContactListTests.swift in Sources */,
-				87DFDFC027ED26530007249B /* FinanceServiceStub.swift in Sources */,
+				87DFDFC027ED26530007249B /* ContactServiceStub.swift in Sources */,
 				87FECB7D27EBDBAF00A67AF8 /* ContactListSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
