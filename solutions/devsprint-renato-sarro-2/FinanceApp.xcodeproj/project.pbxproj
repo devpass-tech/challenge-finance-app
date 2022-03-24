@@ -44,6 +44,7 @@
 		A48A15E027EBDA87008D9D07 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A48A15DF27EBDA87008D9D07 /* LoadingView.swift */; };
 
 		BEF965B027E947DF0003F960 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */; };
+		DB4585D027ED260E00508B79 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4585CF27ED260E00508B79 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +65,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-
 		3DF63A4427EA970E00ED5D53 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 
 		3DF63A4627EA9F0500ED5D53 /* ContactCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellView.swift; sourceTree = "<group>"; };
@@ -109,6 +109,7 @@
 		A48A15DF27EBDA87008D9D07 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 
 		BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		DB4585CF27ED260E00508B79 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,9 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				981B4F5E27D9342C00603253 /* SampleView.swift */,
-
-				A48A15DF27EBDA87008D9D07 /* LoadingView.swift */,
-
+				A491CDF527EB48CC00138800 /* LoadingView.swift */,
+				DB4585CF27ED260E00508B79 /* TabBarViewController.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -486,6 +486,7 @@
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
 				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
 				989627DD27ADC2BC0009A07F /* HomeModel.swift in Sources */,
+				DB4585D027ED260E00508B79 /* TabBarViewController.swift in Sources */,
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
 				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
