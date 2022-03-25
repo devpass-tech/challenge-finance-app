@@ -41,6 +41,7 @@ class TransfersView: UIView, ViewConfiguration {
         button.titleLabel?.numberOfLines = 0
         button.backgroundColor = UIColor(red: 229/255, green: 229/255, blue: 234/255, alpha: 1)
         button.titleLabel?.font = .systemFont(ofSize: 16)
+        
         button.layer.cornerRadius = 18
         button.setTitleColor(.black, for: .normal)
         button.contentEdgeInsets.right = 13
