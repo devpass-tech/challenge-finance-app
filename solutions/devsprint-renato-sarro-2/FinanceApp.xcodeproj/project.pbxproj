@@ -16,7 +16,10 @@
 		87DFDFC027ED26530007249B /* ContactServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFBF27ED26530007249B /* ContactServiceStub.swift */; };
 		87DFDFC227ED28A40007249B /* ContactListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC127ED28A40007249B /* ContactListFactory.swift */; };
 		87DFDFC527ED29730007249B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC427ED29730007249B /* Network.swift */; };
-		87DFDFC727ED2E900007249B /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC627ED2E900007249B /* ContactService.swift */; };
+		87DFDFC727ED2E900007249B /* ContactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC627ED2E900007249B /* ContactRequest.swift */; };
+		87E90B4627F26D0400BEDCF8 /* ContactListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E90B4527F26D0400BEDCF8 /* ContactListUseCase.swift */; };
+		87E90B4827F26D6300BEDCF8 /* ContactListRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E90B4727F26D6300BEDCF8 /* ContactListRepositoryProtocol.swift */; };
+		87E90B4A27F26E2E00BEDCF8 /* ContactListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E90B4927F26E2E00BEDCF8 /* ContactListRepository.swift */; };
 		87FECB7D27EBDBAF00A67AF8 /* ContactListSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FECB7C27EBDBAF00A67AF8 /* ContactListSpy.swift */; };
 		87FECB7F27EBDC0700A67AF8 /* ContactListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FECB7E27EBDC0700A67AF8 /* ContactListTests.swift */; };
 		981B4F5F27D9342C00603253 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B4F5E27D9342C00603253 /* SampleView.swift */; };
@@ -75,7 +78,10 @@
 		87DFDFBF27ED26530007249B /* ContactServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactServiceStub.swift; sourceTree = "<group>"; };
 		87DFDFC127ED28A40007249B /* ContactListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListFactory.swift; sourceTree = "<group>"; };
 		87DFDFC427ED29730007249B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		87DFDFC627ED2E900007249B /* ContactService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
+		87DFDFC627ED2E900007249B /* ContactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequest.swift; sourceTree = "<group>"; };
+		87E90B4527F26D0400BEDCF8 /* ContactListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListUseCase.swift; sourceTree = "<group>"; };
+		87E90B4727F26D6300BEDCF8 /* ContactListRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListRepositoryProtocol.swift; sourceTree = "<group>"; };
+		87E90B4927F26E2E00BEDCF8 /* ContactListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListRepository.swift; sourceTree = "<group>"; };
 		87FECB7C27EBDBAF00A67AF8 /* ContactListSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListSpy.swift; sourceTree = "<group>"; };
 		87FECB7E27EBDC0700A67AF8 /* ContactListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListTests.swift; sourceTree = "<group>"; };
 		981B4F5E27D9342C00603253 /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
@@ -144,6 +150,68 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		87E90B3E27F26B9A00BEDCF8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				98C8A4D727C8150E00A630ED /* Extensions */,
+				989627DE27ADC2DC0009A07F /* DebugYourViews */,
+				98584A9C277E350D0028DBEA /* AppDelegate */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		87E90B3F27F26BBF00BEDCF8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				87E90B4327F26C2400BEDCF8 /* Repository */,
+				87E90B4227F26C1C00BEDCF8 /* UseCases */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		87E90B4027F26BC600BEDCF8 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				87E90B4427F26CCE00BEDCF8 /* Repository */,
+				98584AB8277E374A0028DBEA /* Service */,
+				98584AC1277E42CB0028DBEA /* Models */,
+				87DFDFC327ED296B0007249B /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		87E90B4127F26BCD00BEDCF8 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				98584A9E277E35700028DBEA /* Scenes */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		87E90B4227F26C1C00BEDCF8 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				87E90B4527F26D0400BEDCF8 /* ContactListUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		87E90B4327F26C2400BEDCF8 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				87E90B4727F26D6300BEDCF8 /* ContactListRepositoryProtocol.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		87E90B4427F26CCE00BEDCF8 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				87E90B4927F26E2E00BEDCF8 /* ContactListRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		87FECB7B27EBDBA100A67AF8 /* ContactList */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,14 +245,11 @@
 		98584A6B277E32C30028DBEA /* FinanceApp */ = {
 			isa = PBXGroup;
 			children = (
-				87DFDFC327ED296B0007249B /* Network */,
 				98584A9D277E351B0028DBEA /* Resources */,
-				98584A9C277E350D0028DBEA /* AppDelegate */,
-				98584A9E277E35700028DBEA /* Screens */,
-				989627DE27ADC2DC0009A07F /* DebugYourViews */,
-				98584AC1277E42CB0028DBEA /* Models */,
-				98584AB8277E374A0028DBEA /* Service */,
-				98C8A4D727C8150E00A630ED /* Extensions */,
+				87E90B4127F26BCD00BEDCF8 /* Presentation */,
+				87E90B4027F26BC600BEDCF8 /* Data */,
+				87E90B3F27F26BBF00BEDCF8 /* Domain */,
+				87E90B3E27F26B9A00BEDCF8 /* Application */,
 			);
 			path = FinanceApp;
 			sourceTree = "<group>";
@@ -227,7 +292,7 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		98584A9E277E35700028DBEA /* Screens */ = {
+		98584A9E277E35700028DBEA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				98584AF8277E511C0028DBEA /* Components */,
@@ -238,7 +303,7 @@
 				98584A9F277E35780028DBEA /* Home */,
 				98584B07277E5FF60028DBEA /* ActivityDetails */,
 			);
-			path = Screens;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		98584A9F277E35780028DBEA /* Home */ = {
@@ -322,7 +387,7 @@
 				98584B1A277E60740028DBEA /* ContactListViewController.swift */,
 				3DF63A4627EA9F0500ED5D53 /* ContactCellView.swift */,
 				87DFDFC127ED28A40007249B /* ContactListFactory.swift */,
-				87DFDFC627ED2E900007249B /* ContactService.swift */,
+				87DFDFC627ED2E900007249B /* ContactRequest.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -478,7 +543,7 @@
 			files = (
 				87DFDFC527ED29730007249B /* Network.swift in Sources */,
 				517CB96C27EAA206008A36C0 /* TransferResult.swift in Sources */,
-				87DFDFC727ED2E900007249B /* ContactService.swift in Sources */,
+				87DFDFC727ED2E900007249B /* ContactRequest.swift in Sources */,
 				981B4F5F27D9342C00603253 /* SampleView.swift in Sources */,
 				98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */,
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
@@ -496,14 +561,17 @@
 				87774DC227EE762A0050865A /* Color.swift in Sources */,
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				BEF965B027E947DF0003F960 /* ViewConfiguration.swift in Sources */,
+				87E90B4A27F26E2E00BEDCF8 /* ContactListRepository.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
 				87DFDFC227ED28A40007249B /* ContactListFactory.swift in Sources */,
 				87774DC627EE78480050865A /* DSLabel.swift in Sources */,
+				87E90B4827F26D6300BEDCF8 /* ContactListRepositoryProtocol.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
+				87E90B4627F26D0400BEDCF8 /* ContactListUseCase.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
 				98584AED277E50430028DBEA /* UserProfileView.swift in Sources */,
 			);

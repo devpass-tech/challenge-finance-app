@@ -13,10 +13,10 @@ class ContactListViewController: UIViewController {
        return ContactListView()
     }()
     
-    private let service: ContactServiceProtocol
+    private let useCase: ContactListUseCaseProtocol
     
-    init(service: ContactServiceProtocol) {
-        self.service = service
+    init(useCase: ContactListUseCaseProtocol) {
+        self.useCase = useCase
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -31,7 +31,7 @@ class ContactListViewController: UIViewController {
     override func viewDidLoad() {
         navigationItem.title = "Contact List"
         
-        service.getContacts { [mainView] contactList in
+        useCase.execute { [mainView] contactList in
             mainView.updateList(with: contactList)
         } failure: { error in
             print(error)
