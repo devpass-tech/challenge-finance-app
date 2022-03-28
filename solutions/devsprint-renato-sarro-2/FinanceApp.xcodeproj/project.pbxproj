@@ -16,7 +16,7 @@
 		98584A8E277E32C60028DBEA /* FinanceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A8D277E32C60028DBEA /* FinanceAppUITests.swift */; };
 		98584A90277E32C60028DBEA /* FinanceAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A8F277E32C60028DBEA /* FinanceAppUITestsLaunchTests.swift */; };
 		98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AA4277E35E90028DBEA /* HomeViewController.swift */; };
-		98584AA7277E35F10028DBEA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AA6277E35F10028DBEA /* HomeView.swift */; };
+		98584AA7277E35F10028DBEA /* ActivitySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AA6277E35F10028DBEA /* ActivitySummaryView.swift */; };
 		98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AC2277E42E80028DBEA /* FinanceService.swift */; };
 		98584AE7277E50430028DBEA /* TransfersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AD3277E50430028DBEA /* TransfersView.swift */; };
 		98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AD4277E50430028DBEA /* TransfersViewController.swift */; };
@@ -33,6 +33,12 @@
 		98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4D827C8152200A630ED /* String+Extensions.swift */; };
 		98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */; };
 		BEF965B027E947DF0003F960 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */; };
+		D0DCD08327ECC63400936933 /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DCD08227ECC63300936933 /* ActivityListView.swift */; };
+		D0DCD08427ECC63500936933 /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DCD08227ECC63300936933 /* ActivityListView.swift */; };
+		D0DCD08527ECC63500936933 /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DCD08227ECC63300936933 /* ActivityListView.swift */; };
+		D0DCD08727ECF40E00936933 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DCD08627ECF40E00936933 /* HomeService.swift */; };
+		D0DCD08827ECF40E00936933 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DCD08627ECF40E00936933 /* HomeService.swift */; };
+		D0DCD08927ECF40E00936933 /* HomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0DCD08627ECF40E00936933 /* HomeService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +72,7 @@
 		98584A8D277E32C60028DBEA /* FinanceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceAppUITests.swift; sourceTree = "<group>"; };
 		98584A8F277E32C60028DBEA /* FinanceAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		98584AA4277E35E90028DBEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		98584AA6277E35F10028DBEA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		98584AA6277E35F10028DBEA /* ActivitySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySummaryView.swift; sourceTree = "<group>"; };
 		98584AC2277E42E80028DBEA /* FinanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceService.swift; sourceTree = "<group>"; };
 		98584AD3277E50430028DBEA /* TransfersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransfersView.swift; sourceTree = "<group>"; };
 		98584AD4277E50430028DBEA /* TransfersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransfersViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +89,8 @@
 		98C8A4D827C8152200A630ED /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		D0DCD08227ECC63300936933 /* ActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListView.swift; sourceTree = "<group>"; };
+		D0DCD08627ECF40E00936933 /* HomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,7 +205,9 @@
 		98584A9F277E35780028DBEA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				98584AA6277E35F10028DBEA /* HomeView.swift */,
+				98584AA6277E35F10028DBEA /* ActivitySummaryView.swift */,
+				D0DCD08227ECC63300936933 /* ActivityListView.swift */,
+				D0DCD08627ECF40E00936933 /* HomeService.swift */,
 				98584AA4277E35E90028DBEA /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -429,6 +439,7 @@
 				989627DD27ADC2BC0009A07F /* HomeModel.swift in Sources */,
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
+				D0DCD08327ECC63400936933 /* ActivityListView.swift in Sources */,
 				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
 				98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */,
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
@@ -436,7 +447,8 @@
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
-				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
+				98584AA7277E35F10028DBEA /* ActivitySummaryView.swift in Sources */,
+				D0DCD08727ECF40E00936933 /* HomeService.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
@@ -448,7 +460,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0DCD08827ECF40E00936933 /* HomeService.swift in Sources */,
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
+				D0DCD08427ECC63500936933 /* ActivityListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,6 +471,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				98584A8E277E32C60028DBEA /* FinanceAppUITests.swift in Sources */,
+				D0DCD08527ECC63500936933 /* ActivityListView.swift in Sources */,
+				D0DCD08927ECF40E00936933 /* HomeService.swift in Sources */,
 				98584A90277E32C60028DBEA /* FinanceAppUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

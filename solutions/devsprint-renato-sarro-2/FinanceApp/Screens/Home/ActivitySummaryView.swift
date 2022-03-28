@@ -105,14 +105,6 @@ final class HomeView: UIView, ViewConfiguration{
     
     private var activities: [String] = []
 
-    private lazy var tableView: UITableView = {
-
-        let tableView = UITableView(frame: .zero)
-        tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
-        tableView.dataSource = self
-        return tableView
-    }()
 
     init() {
 
@@ -194,18 +186,4 @@ private extension HomeView {
     }
 }
 
-extension HomeView: UITableViewDataSource {
-
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
-        return self.activities.count
-    }
-
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.activities[indexPath.row]
-        return cell
-    }
-}
 
