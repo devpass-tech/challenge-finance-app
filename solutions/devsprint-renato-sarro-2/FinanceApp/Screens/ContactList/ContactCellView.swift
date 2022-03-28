@@ -34,23 +34,22 @@ class ContactCellView: UITableViewCell {
         profileImage.translatesAutoresizingMaskIntoConstraints = false
         profileImage.contentMode = .scaleAspectFill
         profileImage.layer.cornerRadius = 24
-        profileImage.backgroundColor = .systemGray2
+        profileImage.backgroundColor = DSColor.secondary.color
         profileImage.clipsToBounds = true
         return profileImage
     }()
     
     lazy var nameLabel: UILabel = {
-        let nameLabel = UILabel()
+        let nameLabel = DSLabel.subheadline(color: .primary).build()
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameLabel.font = UIFont.boldSystemFont(ofSize: 15)
+
         return nameLabel
     }()
     
     lazy var phoneLabel: UILabel = {
-        let phoneLabel = UILabel()
+        let phoneLabel = DSLabel.footnote(color: .secondary).build()
         phoneLabel.translatesAutoresizingMaskIntoConstraints = false
-        phoneLabel.font = UIFont.systemFont(ofSize: 13)
-        phoneLabel.textColor = .systemGray2
+        
         return phoneLabel
     }()
     

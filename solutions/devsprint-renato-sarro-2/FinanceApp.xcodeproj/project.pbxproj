@@ -10,6 +10,9 @@
 		3DF63A4727EA9F0500ED5D53 /* ContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF63A4627EA9F0500ED5D53 /* ContactCellView.swift */; };
 		3DF63A4927EAB46C00ED5D53 /* ContactListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF63A4827EAB46C00ED5D53 /* ContactListModel.swift */; };
 		517CB96C27EAA206008A36C0 /* TransferResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517CB96B27EAA206008A36C0 /* TransferResult.swift */; };
+		87774DC227EE762A0050865A /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87774DC127EE762A0050865A /* DSColor.swift */; };
+		87774DC427EE77120050865A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87774DC327EE77120050865A /* Colors.xcassets */; };
+		87774DC627EE78480050865A /* DSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87774DC527EE78480050865A /* DSLabel.swift */; };
 		87DFDFC027ED26530007249B /* ContactServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFBF27ED26530007249B /* ContactServiceStub.swift */; };
 		87DFDFC227ED28A40007249B /* ContactListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC127ED28A40007249B /* ContactListFactory.swift */; };
 		87DFDFC527ED29730007249B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC427ED29730007249B /* Network.swift */; };
@@ -67,6 +70,9 @@
 		3DF63A4627EA9F0500ED5D53 /* ContactCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellView.swift; sourceTree = "<group>"; };
 		3DF63A4827EAB46C00ED5D53 /* ContactListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListModel.swift; sourceTree = "<group>"; };
 		517CB96B27EAA206008A36C0 /* TransferResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferResult.swift; sourceTree = "<group>"; };
+		87774DC127EE762A0050865A /* DSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColor.swift; sourceTree = "<group>"; };
+		87774DC327EE77120050865A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		87774DC527EE78480050865A /* DSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLabel.swift; sourceTree = "<group>"; };
 		87DFDFBF27ED26530007249B /* ContactServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactServiceStub.swift; sourceTree = "<group>"; };
 		87DFDFC127ED28A40007249B /* ContactListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListFactory.swift; sourceTree = "<group>"; };
 		87DFDFC427ED29730007249B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -218,6 +224,7 @@
 				98584A7A277E32C50028DBEA /* Info.plist */,
 				98584A75277E32C50028DBEA /* Assets.xcassets */,
 				98584A77277E32C50028DBEA /* LaunchScreen.storyboard */,
+				87774DC327EE77120050865A /* Colors.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -296,6 +303,8 @@
 			children = (
 				981B4F5E27D9342C00603253 /* SampleView.swift */,
 				DB4585CF27ED260E00508B79 /* TabBarViewController.swift */,
+				87774DC127EE762A0050865A /* DSColor.swift */,
+				87774DC527EE78480050865A /* DSLabel.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -443,6 +452,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87774DC427EE77120050865A /* Colors.xcassets in Resources */,
 				98584A79277E32C50028DBEA /* LaunchScreen.storyboard in Resources */,
 				98584A76277E32C50028DBEA /* Assets.xcassets in Resources */,
 			);
@@ -487,11 +497,13 @@
 				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
 				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
 				98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */,
+				87774DC227EE762A0050865A /* DSColor.swift in Sources */,
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				BEF965B027E947DF0003F960 /* ViewConfiguration.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
 				87DFDFC227ED28A40007249B /* ContactListFactory.swift in Sources */,
+				87774DC627EE78480050865A /* DSLabel.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
