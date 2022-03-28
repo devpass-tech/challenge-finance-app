@@ -7,7 +7,17 @@
 
 import Foundation
 
-class FinanceService {
+protocol FinanceServiceProtocol {
+    func fetchContactList(completion: @escaping ([Contact]) -> Void)
+}
+
+class FinanceService: FinanceServiceProtocol {
+    
+    private let thread: DispatchQueue
+    
+    init(thread: DispatchQueue = .main) {
+        self.thread = thread
+    }
 
     func fetchHomeData(completion: @escaping ([String]) -> Void) {
 
@@ -25,8 +35,11 @@ class FinanceService {
         task.resume()
     }
     
-    func fetchContactList() {
-        
+    func fetchContactList(completion: @escaping ([Contact]) -> Void) {
+        thread.async {
+            completion([Contact(name: "Ronald Robertson", phone: "+55 (11) 99999-9999"),
+                        Contact(name: "Ronald Robertson", phone: "+55 (11) 99999-9999")])
+        }
     }
   
     func transferAmount(completion: @escaping (Bool) -> Void) {
