@@ -14,7 +14,7 @@ class ConfirmationView: UIView {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "checkmark.circle.fill")
-   //     image.contentMode = .scaleToFill
+        
         
         return image
     }()
