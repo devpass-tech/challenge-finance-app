@@ -8,29 +8,49 @@
 import Foundation
 
 protocol TransferServiceProtocol {
-    func fetchTransferData()
+    func fetchTransferData(success: @escaping () -> Void, failure: @escaping () -> Void)
 }
 
+struct TransferResponse: Decodable {
+    var success: Bool
+}
+
+struct TransferRequest: ApiRequest {
+    var urlString: String {
+        return "https://raw.githubusercontent.com/devpass-tech/challenge-finance-app/main/api/transfer_successful_endpoint.json"
+    }
+    
+    var method: ApiMethod {
+        return .get
+    }
+}
 
 class TransferService: TransferServiceProtocol {
     
-    let transferURL = "https://raw.githubusercontent.com/devpass-tech/challenge-finance-app/main/api/transfer_successful_endpoint.json"
+    private let apiClient: ApiClientProtocol
+    
+    init(apiClient: ApiClientProtocol = ApiClient()) {
+        self.apiClient = apiClient
+    }
      
-    func fetchTransferData() {
-        guard let url  = URL(string: transferURL) else { return }
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            if error != nil {
-                print(error)
-                print("ERROR")
-                return
-            }
-            if let data = data {
-                do {
-                    let res = try JSONDecoder().decode(TransferResult.self, from: data)
-                    print("RES: \(res)")
-                } catch {
+    func fetchTransferData(success: @escaping () -> Void, failure: @escaping () -> Void) {
+        apiClient.fetchData(request: TransferRequest()) { (result: Result<TransferResponse, Error>) in
+            
+            switch result {
+            case .success(let response):
+                DispatchQueue.main.async {
+                    if response.success {
+                        success()
+                    } else {
+                        failure()
+                    }
+                }
+            case .failure:
+                DispatchQueue.main.async {
+                    failure()
                 }
             }
-        }.resume()
+            
+        }
     }
 }
