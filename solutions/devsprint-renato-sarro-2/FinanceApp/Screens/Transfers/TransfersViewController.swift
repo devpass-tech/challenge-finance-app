@@ -7,21 +7,22 @@
 
 import UIKit
 
-protocol TransferViewControllerProtocol {
+protocol TransferViewControllerProtocol: AnyObject {
     func chamaFeFe()
 }
 
 class TransfersViewController: UIViewController, TransferViewControllerProtocol {
 
-    lazy var transferView: TransferViewProtocol = {
-        return TransfersView()
-    }()
-    
+    private var transferView: TransferViewProtocol
     private let service: TransferServiceProtocol
     
-    init(service: TransferServiceProtocol) {
+    init(service: TransferServiceProtocol, transferView: TransferViewProtocol = TransfersView()) {
+        self.transferView = transferView
         self.service = service
+        
         super.init(nibName: nil, bundle: nil)
+        
+        self.transferView.delegate = self
     }
     
     @available(*, unavailable)
@@ -30,7 +31,7 @@ class TransfersViewController: UIViewController, TransferViewControllerProtocol 
     }
     
     override func loadView() {
-        self.view = TransfersView()
+        self.view = transferView as? UIView
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -38,6 +39,12 @@ class TransfersViewController: UIViewController, TransferViewControllerProtocol 
     }
     
     func chamaFeFe() {
-        service.fetchTransferData()
+        service.fetchTransferData {
+            self.transferView.configInitalState()
+            self.navigationController?.present(ConfirmationViewController(), animated: true)
+        } failure: {
+            self.transferView.showError(message: "Não foi possível realizar a transferência")
+        }
+
     }
 }

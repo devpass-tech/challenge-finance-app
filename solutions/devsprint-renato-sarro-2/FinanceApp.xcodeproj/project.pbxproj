@@ -13,6 +13,9 @@
 		87774DC227EE762A0050865A /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87774DC127EE762A0050865A /* DSColor.swift */; };
 		87774DC427EE77120050865A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87774DC327EE77120050865A /* Colors.xcassets */; };
 		87774DC627EE78480050865A /* DSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87774DC527EE78480050865A /* DSLabel.swift */; };
+		87C1DFB227F3C226003598E3 /* TransfersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C1DFB127F3C226003598E3 /* TransfersTest.swift */; };
+		87C1DFB427F3C2D5003598E3 /* TransfersViewSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C1DFB327F3C2D5003598E3 /* TransfersViewSpy.swift */; };
+		87C1DFB627F3C33D003598E3 /* TransferServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C1DFB527F3C33D003598E3 /* TransferServiceStub.swift */; };
 		87DFDFC027ED26530007249B /* ContactServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFBF27ED26530007249B /* ContactServiceStub.swift */; };
 		87DFDFC227ED28A40007249B /* ContactListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC127ED28A40007249B /* ContactListFactory.swift */; };
 		87DFDFC527ED29730007249B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC427ED29730007249B /* Network.swift */; };
@@ -73,6 +76,9 @@
 		87774DC127EE762A0050865A /* DSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColor.swift; sourceTree = "<group>"; };
 		87774DC327EE77120050865A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		87774DC527EE78480050865A /* DSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLabel.swift; sourceTree = "<group>"; };
+		87C1DFB127F3C226003598E3 /* TransfersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersTest.swift; sourceTree = "<group>"; };
+		87C1DFB327F3C2D5003598E3 /* TransfersViewSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransfersViewSpy.swift; sourceTree = "<group>"; };
+		87C1DFB527F3C33D003598E3 /* TransferServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferServiceStub.swift; sourceTree = "<group>"; };
 		87DFDFBF27ED26530007249B /* ContactServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactServiceStub.swift; sourceTree = "<group>"; };
 		87DFDFC127ED28A40007249B /* ContactListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListFactory.swift; sourceTree = "<group>"; };
 		87DFDFC427ED29730007249B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
@@ -138,6 +144,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87C1DFB027F3C21B003598E3 /* Transfers */ = {
+			isa = PBXGroup;
+			children = (
+				87C1DFB127F3C226003598E3 /* TransfersTest.swift */,
+				87C1DFB327F3C2D5003598E3 /* TransfersViewSpy.swift */,
+				87C1DFB527F3C33D003598E3 /* TransferServiceStub.swift */,
+			);
+			path = Transfers;
+			sourceTree = "<group>";
+		};
 		87DFDFC327ED296B0007249B /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +210,7 @@
 		98584A82277E32C60028DBEA /* FinanceAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				87C1DFB027F3C21B003598E3 /* Transfers */,
 				87FECB7B27EBDBA100A67AF8 /* ContactList */,
 				98584A83277E32C60028DBEA /* FinanceAppTests.swift */,
 			);
@@ -519,6 +536,9 @@
 			files = (
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
 				87FECB7F27EBDC0700A67AF8 /* ContactListTests.swift in Sources */,
+				87C1DFB427F3C2D5003598E3 /* TransfersViewSpy.swift in Sources */,
+				87C1DFB227F3C226003598E3 /* TransfersTest.swift in Sources */,
+				87C1DFB627F3C33D003598E3 /* TransferServiceStub.swift in Sources */,
 				87DFDFC027ED26530007249B /* ContactServiceStub.swift in Sources */,
 				87FECB7D27EBDBAF00A67AF8 /* ContactListSpy.swift in Sources */,
 			);

@@ -8,15 +8,13 @@
 import UIKit
 
 protocol TransferViewProtocol {
-    func getResponseTransferApi()
+    var delegate: TransferViewControllerProtocol? { get set }
+    
+    func configInitalState()
+    func showError(message: String)
 }
 
 class TransfersView: UIView,TransferViewProtocol, ViewConfiguration {
-    
-    lazy var viewController: TransferViewControllerProtocol = {
-        return TransfersViewController(service: TransferService())
-    }()
-    
     
     lazy var transferValueTextField: UITextField = {
         let textField = UITextField()
@@ -42,9 +40,9 @@ class TransfersView: UIView,TransferViewProtocol, ViewConfiguration {
         label.textColor  = UIColor(red: 211/255, green: 211/255, blue: 211/255, alpha: 1)
         return label
     }()
-
+    
     lazy var chooseContactButton: UIButton = {
-    let button = UIButton()
+        let button = UIButton()
         button.setTitle("Choose contact", for: .normal)
         button.setImage(UIImage(named: "greenSymbol"), for: .normal)
         button.titleLabel?.numberOfLines = 0
@@ -69,6 +67,8 @@ class TransfersView: UIView,TransferViewProtocol, ViewConfiguration {
         return button
     }()
     
+    weak var delegate: TransferViewControllerProtocol?
+    
     
     init() {
         super.init(frame: .zero)
@@ -82,11 +82,16 @@ class TransfersView: UIView,TransferViewProtocol, ViewConfiguration {
     
     
     @objc func chamaFetch() {
-        viewController.chamaFeFe()
+        transferValueTextField.resignFirstResponder()
+        delegate?.chamaFeFe()
     }
     
-    func getResponseTransferApi() {
-        
+    func configInitalState() {
+        transferValueTextField.text = ""
+    }
+    
+    func showError(message: String) {
+        print(message)
     }
     
     func configViews() {
