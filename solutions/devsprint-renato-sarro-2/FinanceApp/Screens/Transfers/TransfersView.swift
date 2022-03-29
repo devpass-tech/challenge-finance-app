@@ -7,7 +7,16 @@
 
 import UIKit
 
-class TransfersView: UIView, ViewConfiguration {
+protocol TransferViewProtocol {
+    func getResponseTransferApi()
+}
+
+class TransfersView: UIView,TransferViewProtocol, ViewConfiguration {
+    
+    lazy var viewController: TransferViewControllerProtocol = {
+        return TransfersViewController(service: TransferService())
+    }()
+    
     
     lazy var transferValueTextField: UITextField = {
         let textField = UITextField()
@@ -45,6 +54,7 @@ class TransfersView: UIView, ViewConfiguration {
         button.layer.cornerRadius = 18
         button.setTitleColor(.black, for: .normal)
         button.contentEdgeInsets.right = 13
+        button.contentEdgeInsets.left = 5
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -53,6 +63,7 @@ class TransfersView: UIView, ViewConfiguration {
         let button = UIButton()
         button.setTitle("Transfer", for: .normal)
         button.backgroundColor = UIColor(red: 0, green: 122/255, blue: 255/255, alpha: 1)
+        button.addTarget(self, action: #selector(chamaFetch), for: .touchUpInside)
         button.layer.cornerRadius = 14
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -67,6 +78,15 @@ class TransfersView: UIView, ViewConfiguration {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    @objc func chamaFetch() {
+        viewController.chamaFeFe()
+    }
+    
+    func getResponseTransferApi() {
+        
     }
     
     func configViews() {
@@ -94,5 +114,4 @@ class TransfersView: UIView, ViewConfiguration {
             transferButton.heightAnchor.constraint(equalToConstant: 56)
         ])
     }
-    
 }

@@ -7,12 +7,20 @@
 
 import UIKit
 
-class TransfersViewController: UIViewController {
+protocol TransferViewControllerProtocol {
+    func chamaFeFe()
+}
 
-    private let transferView: UIView
+class TransfersViewController: UIViewController, TransferViewControllerProtocol {
+
+    lazy var transferView: TransferViewProtocol = {
+        return TransfersView()
+    }()
     
-    init(view: UIView) {
-        transferView = view
+    private let service: TransferServiceProtocol
+    
+    init(service: TransferServiceProtocol) {
+        self.service = service
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -27,5 +35,9 @@ class TransfersViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    func chamaFeFe() {
+        service.fetchTransferData()
     }
 }
