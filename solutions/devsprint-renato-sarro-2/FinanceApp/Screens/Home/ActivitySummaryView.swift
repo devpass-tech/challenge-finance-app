@@ -120,7 +120,6 @@ final class HomeView: UIView, ViewConfiguration{
     func updateView(with activities: [String]) {
 
         self.activities = activities
-        self.tableView.reloadData()
     }
     
     func configViews() {
@@ -150,15 +149,11 @@ final class HomeView: UIView, ViewConfiguration{
             headerStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             headerStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             headerStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20),
-            amountSavingsLabel.trailingAnchor.constraint(equalTo: savingsLabel.trailing Anchor, constant: 146),
+            amountSavingsLabel.trailingAnchor.constraint(equalTo: savingsLabel.trailingAnchor, constant: 146),
             amountSpedingLabel.trailingAnchor.constraint(equalTo: spendingLabel.trailingAnchor, constant: 146),
             activityLabel.topAnchor.constraint(equalTo:headerStack.bottomAnchor, constant: 34),
             activityLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 369),
             activityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant:20),
-            self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.activityLabel.bottomAnchor, constant:24),
-            self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             
             savingsView.widthAnchor.constraint(equalToConstant: 24),
             spendingView.widthAnchor.constraint(equalToConstant: 24)
@@ -169,7 +164,7 @@ final class HomeView: UIView, ViewConfiguration{
     
 }
 
-private extension HomeView {
+private extension ActivitySummaryView {
 
 
     func configureSubviews() {

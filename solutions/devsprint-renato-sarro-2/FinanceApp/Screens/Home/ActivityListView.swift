@@ -8,19 +8,27 @@ import UIKit
 import Foundation
 
 final class ActivityListView: UITableView, ViewConfiguration {
+    private let listViewCellIdentifier = "ListViewCellIdentifier"
     func configViews() {
-        <#code#>
+        
     }
     
     func buildViews() {
-        <#code#>
+        addSubview(tableView)
     }
     
     func setupConstraints() {
-        <#code#>
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: self.topAnchor),
+            tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
+        ])
     }
     
-    private lazy var tableView: UITableView = {
+        private var activities: [String] = []
+    
+        lazy var tableView: UITableView = {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -30,7 +38,7 @@ final class ActivityListView: UITableView, ViewConfiguration {
     }()
 }
 
-extension HomeView: UITableViewDataSource {
+extension ActivityListView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 

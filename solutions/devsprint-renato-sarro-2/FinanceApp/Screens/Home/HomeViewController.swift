@@ -11,10 +11,11 @@ class HomeViewController: UIViewController {
 
     private let service = FinanceService()
 
-    private let homeView: HomeView = {
+    private let activityListView: ActivityListView = {
 
-        let homeView = HomeView()
-        return homeView
+        let activityListView = ActivityListView()
+        
+        return activityListView
     }()
     
     
@@ -26,17 +27,17 @@ class HomeViewController: UIViewController {
 
         navigationItem.title = "Finance App"
         navigationController?.navigationBar.prefersLargeTitles = true
-
+        
         service.fetchHomeData { activities in
 
             DispatchQueue.main.async {
 
-                self.homeView.updateView(with: activities)
+                self.activityListView.updateView(with: activities)
             }
         }
     }
 
     override func loadView() {
-        self.view = homeView
+        self.view = activityListView
     }
 }
