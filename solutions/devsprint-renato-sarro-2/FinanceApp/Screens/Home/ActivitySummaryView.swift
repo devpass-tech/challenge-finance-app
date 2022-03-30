@@ -7,12 +7,17 @@
 
 import UIKit
 
-struct HomeViewConfiguration {
-
-    let activities: [String]
+struct ActivitySummaryInfo {
+    let balance: String
+    let savings: String
+    let spending: String
 }
 
-final class HomeView: UIView, ViewConfiguration{
+protocol ActivitySummaryProtocol {
+    func updateInfo(with info: ActivitySummaryInfo)
+}
+
+final class ActivitySummaryView: UIView, ViewConfiguration, ActivitySummaryProtocol {
     
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
@@ -38,14 +43,17 @@ final class HomeView: UIView, ViewConfiguration{
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
         return stackView
     }()
     
     lazy var savingsView: UIView = {
         let view = UIView()
         view.backgroundColor = .green
-        view.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
         view.layer.cornerRadius = 12
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
         return view
     }()
     
@@ -67,13 +75,14 @@ final class HomeView: UIView, ViewConfiguration{
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 10
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        
         return stackView
     }()
     
     lazy var spendingView: UIView = {
         let view = UIView()
         view.backgroundColor = .red
-        view.frame = CGRect(x:0, y: 0, width: 24, height: 24)
         view.layer.cornerRadius = 12
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -93,16 +102,6 @@ final class HomeView: UIView, ViewConfiguration{
         return label
     }()
     
-    lazy var activityLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Activity"
-        label.frame = CGRect(x: 0, y: 0, width: 65, height: 24)
-        label.textColor = UIColor(red: 0.557, green: 0.557, blue: 0.576, alpha: 1)
-        label.font = UIFont(name: "SFProDisplay-Regular", size: 20)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     private var activities: [String] = []
 
 
@@ -117,27 +116,28 @@ final class HomeView: UIView, ViewConfiguration{
         fatalError("init(coder:) has not been implemented")
     }
 
-    func updateView(with activities: [String]) {
-
-        self.activities = activities
+    func updateInfo(with info: ActivitySummaryInfo) {
+        amountLabel.text = info.balance
+        savingsLabel.text = info.savings
+        spendingLabel.text = info.spending
     }
     
     func configViews() {
+        translatesAutoresizingMaskIntoConstraints = false
         self.backgroundColor = .white
-
-        self.configureSubviews()
-        self.configureSubviewsConstraints()
     }
     
     func buildViews() {
         addSubview(headerStack)
-        addSubview(activityLabel)
+        
         headerStack.addArrangedSubview(amountLabel)
         headerStack.addArrangedSubview(savingsStack)
         headerStack.addArrangedSubview(spendingStack)
+        
         savingsStack.addArrangedSubview(savingsView)
         savingsStack.addArrangedSubview(savingsLabel)
         savingsStack.addArrangedSubview(amountSavingsLabel)
+        
         spendingStack.addArrangedSubview(spendingView)
         spendingStack.addArrangedSubview(spendingLabel)
         spendingStack.addArrangedSubview(amountSpedingLabel)
@@ -147,38 +147,19 @@ final class HomeView: UIView, ViewConfiguration{
     func setupConstraints() {
         NSLayoutConstraint.activate([
             headerStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            headerStack.bottomAnchor.constraint(equalTo: bottomAnchor),
             headerStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             headerStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20),
-            amountSavingsLabel.trailingAnchor.constraint(equalTo: savingsLabel.trailingAnchor, constant: 146),
-            amountSpedingLabel.trailingAnchor.constraint(equalTo: spendingLabel.trailingAnchor, constant: 146),
-            activityLabel.topAnchor.constraint(equalTo:headerStack.bottomAnchor, constant: 34),
-            activityLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 369),
-            activityLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant:20),
             
             savingsView.widthAnchor.constraint(equalToConstant: 24),
-            spendingView.widthAnchor.constraint(equalToConstant: 24)
+            savingsView.heightAnchor.constraint(equalToConstant: 24),
             
+            spendingView.widthAnchor.constraint(equalToConstant: 24),
+            spendingView.heightAnchor.constraint(equalToConstant: 24)
         ])
         
     }
     
-}
-
-private extension ActivitySummaryView {
-
-
-    func configureSubviews() {
-
-        self.addSubview(self.tableView)
-    }
-
-    func configureSubviewsConstraints() {
-
-        NSLayoutConstraint.activate([
-
-        
-        ])
-    }
 }
 
 

@@ -11,33 +11,27 @@ class HomeViewController: UIViewController {
 
     private let service = FinanceService()
 
-    private let activityListView: ActivityListView = {
-
-        let activityListView = ActivityListView()
-        
-        return activityListView
+    private let activityView: ActivityViewProtocol = {
+        let activityView = ActivityView()
+        return activityView
     }()
-    
-    
-    
-    
-//    lazy var savingsLabel:
 
     override func viewDidLoad() {
 
         navigationItem.title = "Finance App"
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        service.fetchHomeData { activities in
-
-            DispatchQueue.main.async {
-
-                self.activityListView.updateView(with: activities)
-            }
+        service.fetchHomeData { [activityView] data in
+            let summary = ActivitySummaryInfo(balance: "\(data.balance)",
+                                              savings: "\(data.savings)",
+                                              spending: "\(data.spending)")
+            
+            activityView.updateInfo(with: data.activity.map { $0.name },
+                                    summaryInfo: summary)
         }
     }
 
     override func loadView() {
-        self.view = activityListView
+        self.view = activityView as? UIView
     }
 }

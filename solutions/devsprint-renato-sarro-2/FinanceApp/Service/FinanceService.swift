@@ -9,13 +9,13 @@ import Foundation
 
 class FinanceService {
 
-    func fetchHomeData(completion: @escaping ([String]) -> Void) {
+    func fetchHomeData(completion: @escaping (HomeModel) -> Void) {
 
         guard let url = URL(string: FinanceService.homeAPIPAth) else { return }
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data, let homeData = try? JSONDecoder().decode(HomeModel.self, from: data) {
                 DispatchQueue.main.async {
-                    completion(homeData.activity.map{$0.name})
+                    completion(homeData)
                 }
             } else {
                 print(error?.localizedDescription ?? "Erro")
