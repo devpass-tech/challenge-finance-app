@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51FD76CD27F3BC1200C5D20E /* ActivityDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD76CC27F3BC1100C5D20E /* ActivityDetailsModel.swift */; };
 		981B4F5F27D9342C00603253 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B4F5E27D9342C00603253 /* SampleView.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		51FD76CC27F3BC1100C5D20E /* ActivityDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsModel.swift; sourceTree = "<group>"; };
 		981B4F5E27D9342C00603253 /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 		98584AC1277E42CB0028DBEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				51FD76CC27F3BC1100C5D20E /* ActivityDetailsModel.swift */,
 				989627DC27ADC2BC0009A07F /* HomeModel.swift */,
 			);
 			path = Models;
@@ -439,6 +442,7 @@
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
+				51FD76CD27F3BC1200C5D20E /* ActivityDetailsModel.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
 				98584AED277E50430028DBEA /* UserProfileView.swift in Sources */,
 			);

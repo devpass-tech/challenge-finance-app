@@ -24,10 +24,28 @@ class FinanceService {
         
         task.resume()
     }
+    
+    func fetchActivityDetails(completion: @escaping (ActivityDetailsModel) -> Void) {
+
+        guard let url = URL(string: FinanceService.activityDetailsAPIPath) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data, let activityDetailsData = try? JSONDecoder().decode(ActivityDetailsModel.self, from: data) {
+                DispatchQueue.main.async {
+                    completion(activityDetailsData)
+                }
+            } else {
+                print(error?.localizedDescription ?? "Erro")
+            }
+        }
+        
+        task.resume()
+    }
 }
 
 extension FinanceService {
     
     static let homeAPIPAth = "https://raw.githubusercontent.com/devpass-tech/challenge-finance-app/main/api/home_endpoint.json"
+    
+    static let activityDetailsAPIPath = "https://raw.githubusercontent.com/devpass-tech/challenge-finance-app/main/api/activity_details_endpoint.json"
     
 }
