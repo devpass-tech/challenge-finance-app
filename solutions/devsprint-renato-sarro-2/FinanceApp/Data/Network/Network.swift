@@ -31,14 +31,34 @@ protocol ApiClientProtocol {
     func fetchData<T: Decodable>(request: ApiRequest, completion: @escaping (Result<T, Error>) -> Void)
 }
 
+protocol URLSessionProtocol {
+    func fetchData(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+}
+
+extension URLSessionProtocol {}
+
+extension URLSession: URLSessionProtocol {
+    func fetchData(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        let dataTask = dataTask(with: request, completionHandler: completionHandler)
+        dataTask.resume()
+    }
+}
+
 class ApiClient: ApiClientProtocol {
+    
+    private let urlSession: URLSessionProtocol
+    
+    init(urlSession: URLSessionProtocol = URLSession.shared) {
+        self.urlSession = urlSession
+    }
+    
     func fetchData<T: Decodable>(request: ApiRequest, completion: @escaping (Result<T, Error>) -> Void) {
         guard let url = URL(string: request.urlString) else { return }
         
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = request.method.rawValue
         
-        let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+        let dataTask = urlSession.fetchData(with: urlRequest) { data, response, error in
             
             if let error = error {
                 completion(.failure(error))
@@ -65,7 +85,5 @@ class ApiClient: ApiClientProtocol {
             }
 
         }
-        
-        dataTask.resume()
     }
 }
