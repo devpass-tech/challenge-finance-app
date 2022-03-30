@@ -8,8 +8,8 @@
 import UIKit
 
 class ConfirmationViewController: UIViewController {
-
     override func loadView() {
-        self.view = ConfirmationView()
+            view = ConfirmationView()
+
     }
 }
