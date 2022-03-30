@@ -7,33 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		51FD76CD27F3BC1200C5D20E /* ActivityDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51FD76CC27F3BC1100C5D20E /* ActivityDetailsModel.swift */; };
-		981B4F5F27D9342C00603253 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B4F5E27D9342C00603253 /* SampleView.swift */; };
-		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
-		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
-		98584A76277E32C50028DBEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98584A75277E32C50028DBEA /* Assets.xcassets */; };
-		98584A79277E32C50028DBEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98584A77277E32C50028DBEA /* LaunchScreen.storyboard */; };
+		51CEDF4C27F5246C00FF8118 /* ContactListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF1C27F5246A00FF8118 /* ContactListModel.swift */; };
+		51CEDF4D27F5246C00FF8118 /* ActivityDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF1D27F5246A00FF8118 /* ActivityDetailsModel.swift */; };
+		51CEDF4E27F5246C00FF8118 /* TransferResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF1E27F5246A00FF8118 /* TransferResult.swift */; };
+		51CEDF4F27F5246C00FF8118 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF1F27F5246A00FF8118 /* HomeModel.swift */; };
+		51CEDF5027F5246C00FF8118 /* ActivityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF2227F5246A00FF8118 /* ActivityDetailsView.swift */; };
+		51CEDF5127F5246C00FF8118 /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF2327F5246A00FF8118 /* ActivityDetailsViewController.swift */; };
+		51CEDF5227F5246C00FF8118 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF2527F5246A00FF8118 /* HomeView.swift */; };
+		51CEDF5327F5246C00FF8118 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF2627F5246A00FF8118 /* HomeViewController.swift */; };
+		51CEDF5427F5246C00FF8118 /* TransfersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF2827F5246A00FF8118 /* TransfersViewController.swift */; };
+		51CEDF5527F5246C00FF8118 /* TransfersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF2927F5246A00FF8118 /* TransfersView.swift */; };
+		51CEDF5627F5246C00FF8118 /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF2B27F5246A00FF8118 /* ConfirmationViewController.swift */; };
+		51CEDF5727F5246C00FF8118 /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF2C27F5246A00FF8118 /* ConfirmationView.swift */; };
+		51CEDF5827F5246C00FF8118 /* ContactService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF2E27F5246A00FF8118 /* ContactService.swift */; };
+		51CEDF5927F5246C00FF8118 /* ContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF2F27F5246A00FF8118 /* ContactCellView.swift */; };
+		51CEDF5A27F5246C00FF8118 /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3027F5246A00FF8118 /* ContactListView.swift */; };
+		51CEDF5B27F5246C00FF8118 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3127F5246A00FF8118 /* ContactListViewController.swift */; };
+		51CEDF5C27F5246C00FF8118 /* ContactListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3227F5246A00FF8118 /* ContactListFactory.swift */; };
+		51CEDF5D27F5246C00FF8118 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3427F5246A00FF8118 /* TabBarViewController.swift */; };
+		51CEDF5E27F5246C00FF8118 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3527F5246A00FF8118 /* LoadingView.swift */; };
+		51CEDF5F27F5246C00FF8118 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3627F5246A00FF8118 /* SampleView.swift */; };
+		51CEDF6027F5246C00FF8118 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3827F5246A00FF8118 /* UserProfileViewController.swift */; };
+		51CEDF6127F5246C00FF8118 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3927F5246A00FF8118 /* UserProfileView.swift */; };
+		51CEDF6227F5246C00FF8118 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3B27F5246A00FF8118 /* String+Extensions.swift */; };
+		51CEDF6327F5246C00FF8118 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3C27F5246A00FF8118 /* ViewConfiguration.swift */; };
+		51CEDF6427F5246C00FF8118 /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3D27F5246A00FF8118 /* UITableViewCell+Extensions.swift */; };
+		51CEDF6527F5246C00FF8118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF3F27F5246B00FF8118 /* AppDelegate.swift */; };
+		51CEDF6627F5246C00FF8118 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF4027F5246B00FF8118 /* SceneDelegate.swift */; };
+		51CEDF6727F5246C00FF8118 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF4227F5246B00FF8118 /* DebugViewController.swift */; };
+		51CEDF6827F5246C00FF8118 /* FinanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF4427F5246B00FF8118 /* FinanceService.swift */; };
+		51CEDF6927F5246C00FF8118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51CEDF4627F5246B00FF8118 /* Assets.xcassets */; };
+		51CEDF6A27F5246C00FF8118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51CEDF4727F5246B00FF8118 /* LaunchScreen.storyboard */; };
+		51CEDF6B27F5246C00FF8118 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 51CEDF4927F5246B00FF8118 /* Info.plist */; };
+		51CEDF6C27F5246C00FF8118 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF4B27F5246C00FF8118 /* Network.swift */; };
+		51CEDF7127F5248100FF8118 /* ContactListSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF6E27F5248100FF8118 /* ContactListSpy.swift */; };
+		51CEDF7227F5248100FF8118 /* ContactListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF6F27F5248100FF8118 /* ContactListTests.swift */; };
+		51CEDF7327F5248100FF8118 /* ContactServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51CEDF7027F5248100FF8118 /* ContactServiceStub.swift */; };
 		98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A83277E32C60028DBEA /* FinanceAppTests.swift */; };
 		98584A8E277E32C60028DBEA /* FinanceAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A8D277E32C60028DBEA /* FinanceAppUITests.swift */; };
 		98584A90277E32C60028DBEA /* FinanceAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A8F277E32C60028DBEA /* FinanceAppUITestsLaunchTests.swift */; };
-		98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AA4277E35E90028DBEA /* HomeViewController.swift */; };
-		98584AA7277E35F10028DBEA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AA6277E35F10028DBEA /* HomeView.swift */; };
-		98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AC2277E42E80028DBEA /* FinanceService.swift */; };
-		98584AE7277E50430028DBEA /* TransfersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AD3277E50430028DBEA /* TransfersView.swift */; };
-		98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AD4277E50430028DBEA /* TransfersViewController.swift */; };
-		98584AED277E50430028DBEA /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584ADA277E50430028DBEA /* UserProfileView.swift */; };
-		98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584ADB277E50430028DBEA /* UserProfileViewController.swift */; };
-		98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AE1277E50430028DBEA /* ConfirmationView.swift */; };
-		98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584AE2277E50430028DBEA /* ConfirmationViewController.swift */; };
-		98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584B0A277E605F0028DBEA /* ActivityDetailsViewController.swift */; };
-		98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584B0E277E605F0028DBEA /* ActivityDetailsView.swift */; };
-		98584B1F277E60740028DBEA /* ContactListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584B19277E60740028DBEA /* ContactListView.swift */; };
-		98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584B1A277E60740028DBEA /* ContactListViewController.swift */; };
-		989627DD27ADC2BC0009A07F /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989627DC27ADC2BC0009A07F /* HomeModel.swift */; };
-		989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989627DF27ADC2F60009A07F /* DebugViewController.swift */; };
-		98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4D827C8152200A630ED /* String+Extensions.swift */; };
-		98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */; };
-		BEF965B027E947DF0003F960 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,37 +66,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		51FD76CC27F3BC1100C5D20E /* ActivityDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsModel.swift; sourceTree = "<group>"; };
-		981B4F5E27D9342C00603253 /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		51CEDF1C27F5246A00FF8118 /* ContactListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListModel.swift; sourceTree = "<group>"; };
+		51CEDF1D27F5246A00FF8118 /* ActivityDetailsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsModel.swift; sourceTree = "<group>"; };
+		51CEDF1E27F5246A00FF8118 /* TransferResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransferResult.swift; sourceTree = "<group>"; };
+		51CEDF1F27F5246A00FF8118 /* HomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
+		51CEDF2227F5246A00FF8118 /* ActivityDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsView.swift; sourceTree = "<group>"; };
+		51CEDF2327F5246A00FF8118 /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
+		51CEDF2527F5246A00FF8118 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		51CEDF2627F5246A00FF8118 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		51CEDF2827F5246A00FF8118 /* TransfersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransfersViewController.swift; sourceTree = "<group>"; };
+		51CEDF2927F5246A00FF8118 /* TransfersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransfersView.swift; sourceTree = "<group>"; };
+		51CEDF2B27F5246A00FF8118 /* ConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
+		51CEDF2C27F5246A00FF8118 /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
+		51CEDF2E27F5246A00FF8118 /* ContactService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactService.swift; sourceTree = "<group>"; };
+		51CEDF2F27F5246A00FF8118 /* ContactCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCellView.swift; sourceTree = "<group>"; };
+		51CEDF3027F5246A00FF8118 /* ContactListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
+		51CEDF3127F5246A00FF8118 /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
+		51CEDF3227F5246A00FF8118 /* ContactListFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListFactory.swift; sourceTree = "<group>"; };
+		51CEDF3427F5246A00FF8118 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		51CEDF3527F5246A00FF8118 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		51CEDF3627F5246A00FF8118 /* SampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
+		51CEDF3827F5246A00FF8118 /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		51CEDF3927F5246A00FF8118 /* UserProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		51CEDF3B27F5246A00FF8118 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		51CEDF3C27F5246A00FF8118 /* ViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
+		51CEDF3D27F5246A00FF8118 /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		51CEDF3F27F5246B00FF8118 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		51CEDF4027F5246B00FF8118 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		51CEDF4227F5246B00FF8118 /* DebugViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		51CEDF4427F5246B00FF8118 /* FinanceService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinanceService.swift; sourceTree = "<group>"; };
+		51CEDF4627F5246B00FF8118 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		51CEDF4827F5246B00FF8118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		51CEDF4927F5246B00FF8118 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51CEDF4B27F5246C00FF8118 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		51CEDF6E27F5248100FF8118 /* ContactListSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListSpy.swift; sourceTree = "<group>"; };
+		51CEDF6F27F5248100FF8118 /* ContactListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListTests.swift; sourceTree = "<group>"; };
+		51CEDF7027F5248100FF8118 /* ContactServiceStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactServiceStub.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		98584A6E277E32C30028DBEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		98584A75277E32C50028DBEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		98584A78277E32C50028DBEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		98584A7A277E32C50028DBEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		98584A7F277E32C60028DBEA /* FinanceAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A83277E32C60028DBEA /* FinanceAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceAppTests.swift; sourceTree = "<group>"; };
 		98584A89277E32C60028DBEA /* FinanceAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinanceAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A8D277E32C60028DBEA /* FinanceAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceAppUITests.swift; sourceTree = "<group>"; };
 		98584A8F277E32C60028DBEA /* FinanceAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		98584AA4277E35E90028DBEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		98584AA6277E35F10028DBEA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		98584AC2277E42E80028DBEA /* FinanceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceService.swift; sourceTree = "<group>"; };
-		98584AD3277E50430028DBEA /* TransfersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransfersView.swift; sourceTree = "<group>"; };
-		98584AD4277E50430028DBEA /* TransfersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransfersViewController.swift; sourceTree = "<group>"; };
-		98584ADA277E50430028DBEA /* UserProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
-		98584ADB277E50430028DBEA /* UserProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		98584AE1277E50430028DBEA /* ConfirmationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationView.swift; sourceTree = "<group>"; };
-		98584AE2277E50430028DBEA /* ConfirmationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmationViewController.swift; sourceTree = "<group>"; };
-		98584B0A277E605F0028DBEA /* ActivityDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewController.swift; sourceTree = "<group>"; };
-		98584B0E277E605F0028DBEA /* ActivityDetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityDetailsView.swift; sourceTree = "<group>"; };
-		98584B19277E60740028DBEA /* ContactListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListView.swift; sourceTree = "<group>"; };
-		98584B1A277E60740028DBEA /* ContactListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListViewController.swift; sourceTree = "<group>"; };
-		989627DC27ADC2BC0009A07F /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
-		989627DF27ADC2F60009A07F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
-		98C8A4D827C8152200A630ED /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
-		BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +135,161 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		51CEDF1B27F5246A00FF8118 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF1C27F5246A00FF8118 /* ContactListModel.swift */,
+				51CEDF1D27F5246A00FF8118 /* ActivityDetailsModel.swift */,
+				51CEDF1E27F5246A00FF8118 /* TransferResult.swift */,
+				51CEDF1F27F5246A00FF8118 /* HomeModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		51CEDF2027F5246A00FF8118 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF2127F5246A00FF8118 /* ActivityDetails */,
+				51CEDF2427F5246A00FF8118 /* Home */,
+				51CEDF2727F5246A00FF8118 /* Transfers */,
+				51CEDF2A27F5246A00FF8118 /* Confirmation */,
+				51CEDF2D27F5246A00FF8118 /* ContactList */,
+				51CEDF3327F5246A00FF8118 /* Components */,
+				51CEDF3727F5246A00FF8118 /* UserProfile */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		51CEDF2127F5246A00FF8118 /* ActivityDetails */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF2227F5246A00FF8118 /* ActivityDetailsView.swift */,
+				51CEDF2327F5246A00FF8118 /* ActivityDetailsViewController.swift */,
+			);
+			path = ActivityDetails;
+			sourceTree = "<group>";
+		};
+		51CEDF2427F5246A00FF8118 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF2527F5246A00FF8118 /* HomeView.swift */,
+				51CEDF2627F5246A00FF8118 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		51CEDF2727F5246A00FF8118 /* Transfers */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF2827F5246A00FF8118 /* TransfersViewController.swift */,
+				51CEDF2927F5246A00FF8118 /* TransfersView.swift */,
+			);
+			path = Transfers;
+			sourceTree = "<group>";
+		};
+		51CEDF2A27F5246A00FF8118 /* Confirmation */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF2B27F5246A00FF8118 /* ConfirmationViewController.swift */,
+				51CEDF2C27F5246A00FF8118 /* ConfirmationView.swift */,
+			);
+			path = Confirmation;
+			sourceTree = "<group>";
+		};
+		51CEDF2D27F5246A00FF8118 /* ContactList */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF2E27F5246A00FF8118 /* ContactService.swift */,
+				51CEDF2F27F5246A00FF8118 /* ContactCellView.swift */,
+				51CEDF3027F5246A00FF8118 /* ContactListView.swift */,
+				51CEDF3127F5246A00FF8118 /* ContactListViewController.swift */,
+				51CEDF3227F5246A00FF8118 /* ContactListFactory.swift */,
+			);
+			path = ContactList;
+			sourceTree = "<group>";
+		};
+		51CEDF3327F5246A00FF8118 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF3427F5246A00FF8118 /* TabBarViewController.swift */,
+				51CEDF3527F5246A00FF8118 /* LoadingView.swift */,
+				51CEDF3627F5246A00FF8118 /* SampleView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		51CEDF3727F5246A00FF8118 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF3827F5246A00FF8118 /* UserProfileViewController.swift */,
+				51CEDF3927F5246A00FF8118 /* UserProfileView.swift */,
+			);
+			path = UserProfile;
+			sourceTree = "<group>";
+		};
+		51CEDF3A27F5246A00FF8118 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF3B27F5246A00FF8118 /* String+Extensions.swift */,
+				51CEDF3C27F5246A00FF8118 /* ViewConfiguration.swift */,
+				51CEDF3D27F5246A00FF8118 /* UITableViewCell+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		51CEDF3E27F5246B00FF8118 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF3F27F5246B00FF8118 /* AppDelegate.swift */,
+				51CEDF4027F5246B00FF8118 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		51CEDF4127F5246B00FF8118 /* DebugYourViews */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF4227F5246B00FF8118 /* DebugViewController.swift */,
+			);
+			path = DebugYourViews;
+			sourceTree = "<group>";
+		};
+		51CEDF4327F5246B00FF8118 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF4427F5246B00FF8118 /* FinanceService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		51CEDF4527F5246B00FF8118 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF4627F5246B00FF8118 /* Assets.xcassets */,
+				51CEDF4727F5246B00FF8118 /* LaunchScreen.storyboard */,
+				51CEDF4927F5246B00FF8118 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		51CEDF4A27F5246C00FF8118 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF4B27F5246C00FF8118 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		51CEDF6D27F5248100FF8118 /* ContactList */ = {
+			isa = PBXGroup;
+			children = (
+				51CEDF6E27F5248100FF8118 /* ContactListSpy.swift */,
+				51CEDF6F27F5248100FF8118 /* ContactListTests.swift */,
+				51CEDF7027F5248100FF8118 /* ContactServiceStub.swift */,
+			);
+			path = ContactList;
+			sourceTree = "<group>";
+		};
 		98584A60277E32C30028DBEA = {
 			isa = PBXGroup;
 			children = (
@@ -135,13 +313,14 @@
 		98584A6B277E32C30028DBEA /* FinanceApp */ = {
 			isa = PBXGroup;
 			children = (
-				98584A9D277E351B0028DBEA /* Resources */,
-				98584A9C277E350D0028DBEA /* AppDelegate */,
-				98584A9E277E35700028DBEA /* Screens */,
-				989627DE27ADC2DC0009A07F /* DebugYourViews */,
-				98584AC1277E42CB0028DBEA /* Models */,
-				98584AB8277E374A0028DBEA /* Service */,
-				98C8A4D727C8150E00A630ED /* Extensions */,
+				51CEDF3E27F5246B00FF8118 /* AppDelegate */,
+				51CEDF4127F5246B00FF8118 /* DebugYourViews */,
+				51CEDF3A27F5246A00FF8118 /* Extensions */,
+				51CEDF1B27F5246A00FF8118 /* Models */,
+				51CEDF4A27F5246C00FF8118 /* Network */,
+				51CEDF4527F5246B00FF8118 /* Resources */,
+				51CEDF2027F5246A00FF8118 /* Screens */,
+				51CEDF4327F5246B00FF8118 /* Service */,
 			);
 			path = FinanceApp;
 			sourceTree = "<group>";
@@ -149,6 +328,7 @@
 		98584A82277E32C60028DBEA /* FinanceAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				51CEDF6D27F5248100FF8118 /* ContactList */,
 				98584A83277E32C60028DBEA /* FinanceAppTests.swift */,
 			);
 			path = FinanceAppTests;
@@ -161,136 +341,6 @@
 				98584A8F277E32C60028DBEA /* FinanceAppUITestsLaunchTests.swift */,
 			);
 			path = FinanceAppUITests;
-			sourceTree = "<group>";
-		};
-		98584A9C277E350D0028DBEA /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				98584A6C277E32C30028DBEA /* AppDelegate.swift */,
-				98584A6E277E32C30028DBEA /* SceneDelegate.swift */,
-			);
-			path = AppDelegate;
-			sourceTree = "<group>";
-		};
-		98584A9D277E351B0028DBEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				98584A7A277E32C50028DBEA /* Info.plist */,
-				98584A75277E32C50028DBEA /* Assets.xcassets */,
-				98584A77277E32C50028DBEA /* LaunchScreen.storyboard */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		98584A9E277E35700028DBEA /* Screens */ = {
-			isa = PBXGroup;
-			children = (
-				98584AF8277E511C0028DBEA /* Components */,
-				98584B08277E602C0028DBEA /* ContactList */,
-				98584ADF277E50430028DBEA /* Confirmation */,
-				98584AD1277E50430028DBEA /* Transfers */,
-				98584AD8277E50430028DBEA /* UserProfile */,
-				98584A9F277E35780028DBEA /* Home */,
-				98584B07277E5FF60028DBEA /* ActivityDetails */,
-			);
-			path = Screens;
-			sourceTree = "<group>";
-		};
-		98584A9F277E35780028DBEA /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				98584AA6277E35F10028DBEA /* HomeView.swift */,
-				98584AA4277E35E90028DBEA /* HomeViewController.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		98584AB8277E374A0028DBEA /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				98584AC2277E42E80028DBEA /* FinanceService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		98584AC1277E42CB0028DBEA /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				51FD76CC27F3BC1100C5D20E /* ActivityDetailsModel.swift */,
-				989627DC27ADC2BC0009A07F /* HomeModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		98584AD1277E50430028DBEA /* Transfers */ = {
-			isa = PBXGroup;
-			children = (
-				98584AD3277E50430028DBEA /* TransfersView.swift */,
-				98584AD4277E50430028DBEA /* TransfersViewController.swift */,
-			);
-			path = Transfers;
-			sourceTree = "<group>";
-		};
-		98584AD8277E50430028DBEA /* UserProfile */ = {
-			isa = PBXGroup;
-			children = (
-				98584ADA277E50430028DBEA /* UserProfileView.swift */,
-				98584ADB277E50430028DBEA /* UserProfileViewController.swift */,
-			);
-			path = UserProfile;
-			sourceTree = "<group>";
-		};
-		98584ADF277E50430028DBEA /* Confirmation */ = {
-			isa = PBXGroup;
-			children = (
-				98584AE1277E50430028DBEA /* ConfirmationView.swift */,
-				98584AE2277E50430028DBEA /* ConfirmationViewController.swift */,
-			);
-			path = Confirmation;
-			sourceTree = "<group>";
-		};
-		98584AF8277E511C0028DBEA /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				981B4F5E27D9342C00603253 /* SampleView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		98584B07277E5FF60028DBEA /* ActivityDetails */ = {
-			isa = PBXGroup;
-			children = (
-				98584B0E277E605F0028DBEA /* ActivityDetailsView.swift */,
-				98584B0A277E605F0028DBEA /* ActivityDetailsViewController.swift */,
-			);
-			path = ActivityDetails;
-			sourceTree = "<group>";
-		};
-		98584B08277E602C0028DBEA /* ContactList */ = {
-			isa = PBXGroup;
-			children = (
-				98584B19277E60740028DBEA /* ContactListView.swift */,
-				98584B1A277E60740028DBEA /* ContactListViewController.swift */,
-			);
-			path = ContactList;
-			sourceTree = "<group>";
-		};
-		989627DE27ADC2DC0009A07F /* DebugYourViews */ = {
-			isa = PBXGroup;
-			children = (
-				989627DF27ADC2F60009A07F /* DebugViewController.swift */,
-			);
-			path = DebugYourViews;
-			sourceTree = "<group>";
-		};
-		98C8A4D727C8150E00A630ED /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				98C8A4D827C8152200A630ED /* String+Extensions.swift */,
-				98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */,
-				BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,8 +447,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98584A79277E32C50028DBEA /* LaunchScreen.storyboard in Resources */,
-				98584A76277E32C50028DBEA /* Assets.xcassets in Resources */,
+				51CEDF6927F5246C00FF8118 /* Assets.xcassets in Resources */,
+				51CEDF6A27F5246C00FF8118 /* LaunchScreen.storyboard in Resources */,
+				51CEDF6B27F5246C00FF8118 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,28 +474,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				981B4F5F27D9342C00603253 /* SampleView.swift in Sources */,
-				98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */,
-				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
-				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
-				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
-				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
-				989627DD27ADC2BC0009A07F /* HomeModel.swift in Sources */,
-				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
-				98584B14277E605F0028DBEA /* ActivityDetailsView.swift in Sources */,
-				98584AE7277E50430028DBEA /* TransfersView.swift in Sources */,
-				98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */,
-				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
-				BEF965B027E947DF0003F960 /* ViewConfiguration.swift in Sources */,
-				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
-				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
-				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
-				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
-				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
-				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
-				51FD76CD27F3BC1200C5D20E /* ActivityDetailsModel.swift in Sources */,
-				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
-				98584AED277E50430028DBEA /* UserProfileView.swift in Sources */,
+				51CEDF5F27F5246C00FF8118 /* SampleView.swift in Sources */,
+				51CEDF5A27F5246C00FF8118 /* ContactListView.swift in Sources */,
+				51CEDF5B27F5246C00FF8118 /* ContactListViewController.swift in Sources */,
+				51CEDF5427F5246C00FF8118 /* TransfersViewController.swift in Sources */,
+				51CEDF5927F5246C00FF8118 /* ContactCellView.swift in Sources */,
+				51CEDF5D27F5246C00FF8118 /* TabBarViewController.swift in Sources */,
+				51CEDF5727F5246C00FF8118 /* ConfirmationView.swift in Sources */,
+				51CEDF6127F5246C00FF8118 /* UserProfileView.swift in Sources */,
+				51CEDF6527F5246C00FF8118 /* AppDelegate.swift in Sources */,
+				51CEDF4F27F5246C00FF8118 /* HomeModel.swift in Sources */,
+				51CEDF5227F5246C00FF8118 /* HomeView.swift in Sources */,
+				51CEDF6627F5246C00FF8118 /* SceneDelegate.swift in Sources */,
+				51CEDF5527F5246C00FF8118 /* TransfersView.swift in Sources */,
+				51CEDF5627F5246C00FF8118 /* ConfirmationViewController.swift in Sources */,
+				51CEDF4E27F5246C00FF8118 /* TransferResult.swift in Sources */,
+				51CEDF5327F5246C00FF8118 /* HomeViewController.swift in Sources */,
+				51CEDF5827F5246C00FF8118 /* ContactService.swift in Sources */,
+				51CEDF4C27F5246C00FF8118 /* ContactListModel.swift in Sources */,
+				51CEDF5C27F5246C00FF8118 /* ContactListFactory.swift in Sources */,
+				51CEDF6027F5246C00FF8118 /* UserProfileViewController.swift in Sources */,
+				51CEDF6C27F5246C00FF8118 /* Network.swift in Sources */,
+				51CEDF4D27F5246C00FF8118 /* ActivityDetailsModel.swift in Sources */,
+				51CEDF6827F5246C00FF8118 /* FinanceService.swift in Sources */,
+				51CEDF6227F5246C00FF8118 /* String+Extensions.swift in Sources */,
+				51CEDF6727F5246C00FF8118 /* DebugViewController.swift in Sources */,
+				51CEDF5127F5246C00FF8118 /* ActivityDetailsViewController.swift in Sources */,
+				51CEDF6327F5246C00FF8118 /* ViewConfiguration.swift in Sources */,
+				51CEDF5E27F5246C00FF8118 /* LoadingView.swift in Sources */,
+				51CEDF6427F5246C00FF8118 /* UITableViewCell+Extensions.swift in Sources */,
+				51CEDF5027F5246C00FF8118 /* ActivityDetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,6 +512,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
+				51CEDF7227F5248100FF8118 /* ContactListTests.swift in Sources */,
+				51CEDF7327F5248100FF8118 /* ContactServiceStub.swift in Sources */,
+				51CEDF7127F5248100FF8118 /* ContactListSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,10 +543,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		98584A77277E32C50028DBEA /* LaunchScreen.storyboard */ = {
+		51CEDF4727F5246B00FF8118 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				98584A78277E32C50028DBEA /* Base */,
+				51CEDF4827F5246B00FF8118 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
