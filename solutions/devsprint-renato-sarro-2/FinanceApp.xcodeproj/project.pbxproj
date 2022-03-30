@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87469F9A27F51A3400980A65 /* ConfirmationViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87469F9927F51A3400980A65 /* ConfirmationViewTest.swift */; };
 		981B4F5F27D9342C00603253 /* SampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981B4F5E27D9342C00603253 /* SampleView.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
@@ -52,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		87469F9927F51A3400980A65 /* ConfirmationViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationViewTest.swift; sourceTree = "<group>"; };
 		981B4F5E27D9342C00603253 /* SampleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleView.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		87469F9827F51A2A00980A65 /* ConfirmationView */ = {
+			isa = PBXGroup;
+			children = (
+				87469F9927F51A3400980A65 /* ConfirmationViewTest.swift */,
+			);
+			path = ConfirmationView;
+			sourceTree = "<group>";
+		};
 		98584A60277E32C30028DBEA = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		98584A82277E32C60028DBEA /* FinanceAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				87469F9827F51A2A00980A65 /* ConfirmationView */,
 				98584A83277E32C60028DBEA /* FinanceAppTests.swift */,
 			);
 			path = FinanceAppTests;
@@ -445,6 +456,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
+				87469F9A27F51A3400980A65 /* ConfirmationViewTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

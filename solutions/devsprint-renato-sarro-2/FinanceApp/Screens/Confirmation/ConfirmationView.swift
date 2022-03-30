@@ -6,7 +6,6 @@
 //
 
 import UIKit
-//import XCTest
 
 class ConfirmationView: UIView {
     
@@ -38,10 +37,13 @@ class ConfirmationView: UIView {
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         button.backgroundColor = UIColor(cgColor: .init(red: 0.190, green: 0.840, blue: 0.297, alpha: 1))
         button.layer.cornerRadius = 15
+        button.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
         
         return button
         
     }()
+    
+    weak var delegate: ConfirmationViewProtocol?
     
     init() {
         super.init(frame: .zero)
@@ -55,6 +57,11 @@ class ConfirmationView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func actionButton() {
+        print("")
+        delegate?.didFinish()
     }
     
     func configViews() {

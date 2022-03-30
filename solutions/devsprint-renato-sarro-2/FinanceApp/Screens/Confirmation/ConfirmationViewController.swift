@@ -7,9 +7,17 @@
 
 import UIKit
 
-class ConfirmationViewController: UIViewController {
-    override func loadView() {
-            view = ConfirmationView()
+protocol ConfirmationViewProtocol: AnyObject {
+    func didFinish()
+}
 
+class ConfirmationViewController: UIViewController, ConfirmationViewProtocol {
+    override func loadView() {
+        view = ConfirmationView()
+        
+    }
+    
+    func didFinish() {
+        dismiss(animated: true)
     }
 }
