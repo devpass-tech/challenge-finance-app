@@ -83,6 +83,7 @@ extension HomeView: UITableViewDataSource {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
         cell.textLabel?.text = self.activities[indexPath.row]
+        
         return cell
     }
 }
