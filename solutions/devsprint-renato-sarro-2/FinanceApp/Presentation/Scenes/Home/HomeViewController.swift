@@ -21,6 +21,10 @@ class HomeViewController: UIViewController {
 
         navigationItem.title = "Finance App"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        let profileVC = UserProfileViewController()
+        let accountBarButtonItem = AccountNavigationBarButton(from: self, to: profileVC)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: accountBarButtonItem)
 
         service.fetchHomeData { activities in
 

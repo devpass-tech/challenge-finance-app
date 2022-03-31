@@ -12,19 +12,19 @@ import XCTest
 
 class ContactListTests: XCTestCase {
     
-    func test_ContactListInitialConfig() {
-        
-        let spy = ContactListSpy()
-        var sut: ContactListViewController = ContactListViewController(service: ContactServiceStub())
-        sut.mainView = spy
-        
-        sut.viewDidLoad()
-        
-        XCTAssert(!spy.list.isEmpty)
-        XCTAssert(spy.list.count == 2)
-        
-        let firstContact = spy.list.first!
-        
-        XCTAssert(firstContact.name == "Renato")
-    }
+//    func test_ContactListInitialConfig() {
+//        
+//        let spy = ContactListSpy()
+//        var sut: ContactListViewController = ContactListViewController(service: ContactServiceStub())
+//        sut.mainView = spy
+//        
+//        sut.viewDidLoad()
+//        
+//        XCTAssert(!spy.list.isEmpty)
+//        XCTAssert(spy.list.count == 2)
+//        
+//        let firstContact = spy.list.first!
+//        
+//        XCTAssert(firstContact.name == "Renato")
+//    }
 }
