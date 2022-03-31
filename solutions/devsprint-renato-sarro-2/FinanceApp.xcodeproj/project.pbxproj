@@ -47,6 +47,8 @@
 		989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989627DF27ADC2F60009A07F /* DebugViewController.swift */; };
 		98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4D827C8152200A630ED /* String+Extensions.swift */; };
 		98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */; };
+		BE208A0627F27612000F8B35 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE208A0527F27612000F8B35 /* NetworkTests.swift */; };
+		BE208A0827F2764D000F8B35 /* NetworkStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE208A0727F2764D000F8B35 /* NetworkStub.swift */; };
 		BEF965B027E947DF0003F960 /* ViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */; };
 		DB4585D027ED260E00508B79 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4585CF27ED260E00508B79 /* TabBarViewController.swift */; };
 /* End PBXBuildFile section */
@@ -113,6 +115,8 @@
 		989627DF27ADC2F60009A07F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		98C8A4D827C8152200A630ED /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
+		BE208A0527F27612000F8B35 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		BE208A0727F2764D000F8B35 /* NetworkStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStub.swift; sourceTree = "<group>"; };
 		BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		DB4585CF27ED260E00508B79 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -257,6 +261,7 @@
 		98584A82277E32C60028DBEA /* FinanceAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				BE208A0427F275E9000F8B35 /* Network */,
 				87FECB7B27EBDBA100A67AF8 /* ContactList */,
 				98584A83277E32C60028DBEA /* FinanceAppTests.swift */,
 			);
@@ -408,6 +413,15 @@
 				BEF965AF27E947DF0003F960 /* ViewConfiguration.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BE208A0427F275E9000F8B35 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BE208A0527F27612000F8B35 /* NetworkTests.swift */,
+				BE208A0727F2764D000F8B35 /* NetworkStub.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -583,7 +597,9 @@
 			files = (
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
 				87FECB7F27EBDC0700A67AF8 /* ContactListTests.swift in Sources */,
+				BE208A0627F27612000F8B35 /* NetworkTests.swift in Sources */,
 				87DFDFC027ED26530007249B /* ContactServiceStub.swift in Sources */,
+				BE208A0827F2764D000F8B35 /* NetworkStub.swift in Sources */,
 				87FECB7D27EBDBAF00A67AF8 /* ContactListSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
