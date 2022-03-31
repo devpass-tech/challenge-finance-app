@@ -31,7 +31,7 @@ class TabBarViewController: UITabBarController {
                                        title: "Home",
                                        image: UIImage(named: "house.fill")
                                       ),
-            creatingNavigationController(with: TransfersViewController(service: TransferService()),
+            creatingNavigationController(with: TransferFactory.build(),
                                        title: "Transfers",
                                        image: UIImage(named: "arrow.up.arrow.down")
                                       )

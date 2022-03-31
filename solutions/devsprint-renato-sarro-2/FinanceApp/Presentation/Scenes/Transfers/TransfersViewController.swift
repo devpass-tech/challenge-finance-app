@@ -13,6 +13,8 @@ protocol TransferViewControllerProtocol: AnyObject {
 
 class TransfersViewController: UIViewController, TransferViewControllerProtocol {
 
+    var coordinator: TransferCoordinatorProtocol?
+    
     private var transferView: TransferViewProtocol
     private let service: TransferServiceProtocol
     
@@ -39,9 +41,9 @@ class TransfersViewController: UIViewController, TransferViewControllerProtocol 
     }
     
     func chamaFeFe() {
-        service.fetchTransferData {
-            self.transferView.configInitalState()
-            self.navigationController?.present(ConfirmationViewController(), animated: true)
+        service.fetchTransferData { [transferView, coordinator] in
+            transferView.configInitalState()
+            coordinator?.executeFlow(to: .success)
         } failure: {
             self.transferView.showError(message: "Não foi possível realizar a transferência")
         }
