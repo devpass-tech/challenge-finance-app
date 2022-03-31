@@ -7,17 +7,26 @@
 
 import UIKit
 
-final class AccountBarButtonItem: UIView {
+final class AccountNavigationBarButton: UIView {
+    
+    private let origin: UIViewController
+    private let destination: UIViewController
     
     private lazy var button: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "avatar-placeholder"), for: .normal)
-        
+        button.addAction(UIAction(handler: { [weak self] _ in
+            guard let self = self else { return }
+            
+            self.origin.navigationController?.present(self.destination, animated: true)
+        }), for: .primaryActionTriggered)
         return button
     }()
 
-    init() {
+    init(from origin: UIViewController, to destination: UIViewController) {
+        self.origin = origin
+        self.destination = destination
         super.init(frame: .zero)
         setupViews()
     }
@@ -27,7 +36,7 @@ final class AccountBarButtonItem: UIView {
     }
 }
 
-extension AccountBarButtonItem: ViewConfiguration {
+extension AccountNavigationBarButton: ViewConfiguration {
     func configViews() {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = 18

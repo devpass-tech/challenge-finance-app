@@ -16,14 +16,14 @@ class HomeViewController: UIViewController {
         let homeView = HomeView()
         return homeView
     }()
-    
-    private let accountBarButtonItem = AccountBarButtonItem()
 
     override func viewDidLoad() {
 
         navigationItem.title = "Finance App"
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        let profileVC = UserProfileViewController()
+        let accountBarButtonItem = AccountNavigationBarButton(from: self, to: profileVC)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: accountBarButtonItem)
 
         service.fetchHomeData { activities in
