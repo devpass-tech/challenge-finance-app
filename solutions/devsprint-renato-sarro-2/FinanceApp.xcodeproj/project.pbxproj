@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D45AA2A27F5225900AEBD10 /* AccountNavigationBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D45AA2927F5225900AEBD10 /* AccountNavigationBarButton.swift */; };
 		3DF63A4727EA9F0500ED5D53 /* ContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF63A4627EA9F0500ED5D53 /* ContactCellView.swift */; };
 		3DF63A4927EAB46C00ED5D53 /* ContactListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF63A4827EAB46C00ED5D53 /* ContactListModel.swift */; };
 		517CB96C27EAA206008A36C0 /* TransferResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517CB96B27EAA206008A36C0 /* TransferResult.swift */; };
@@ -71,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D45AA2927F5225900AEBD10 /* AccountNavigationBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountNavigationBarButton.swift; sourceTree = "<group>"; };
 		3DF63A4627EA9F0500ED5D53 /* ContactCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellView.swift; sourceTree = "<group>"; };
 		3DF63A4827EAB46C00ED5D53 /* ContactListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListModel.swift; sourceTree = "<group>"; };
 		517CB96B27EAA206008A36C0 /* TransferResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferResult.swift; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				DB4585CF27ED260E00508B79 /* TabBarViewController.swift */,
 				87774DC127EE762A0050865A /* DSColor.swift */,
 				87774DC527EE78480050865A /* DSLabel.swift */,
+				3D45AA2927F5225900AEBD10 /* AccountNavigationBarButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -575,6 +578,7 @@
 				87774DC227EE762A0050865A /* DSColor.swift in Sources */,
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				BEF965B027E947DF0003F960 /* ViewConfiguration.swift in Sources */,
+				3D45AA2A27F5225900AEBD10 /* AccountNavigationBarButton.swift in Sources */,
 				87E90B4A27F26E2E00BEDCF8 /* ContactListRepository.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
