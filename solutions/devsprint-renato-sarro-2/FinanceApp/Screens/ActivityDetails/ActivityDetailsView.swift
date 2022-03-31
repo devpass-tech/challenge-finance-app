@@ -122,18 +122,11 @@ class ActivityDetailsView: UIView, ViewConfiguration {
             self.activityImage.heightAnchor.constraint(equalToConstant: 100),
             self.activityImage.widthAnchor.constraint(equalToConstant: 100),
 
-//            self.nameLabel.heightAnchor.constraint(equalToConstant: 22),
-//            self.categoryLabel.heightAnchor.constraint(equalToConstant: 20),
-
             self.bodyStackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             self.bodyStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-//            self.bodyStackView.leadingAnchor.constraint(equalTo: self.headStackView.leadingAnchor),
-//            self.bodyStackView.trailingAnchor.constraint(equalTo: self.headStackView.trailingAnchor),
 
-//            self.priceLabel.heightAnchor.constraint(equalToConstant: 41),
             self.priceLabel.widthAnchor.constraint(equalToConstant: 413),
 
-//            self.timeLabel.heightAnchor.constraint(equalToConstant: 20),
             self.timeLabel.widthAnchor.constraint(equalToConstant: 413),
 
             self.reportButton.heightAnchor.constraint(equalToConstant: 56),
