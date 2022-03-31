@@ -15,7 +15,9 @@
 		87774DC227EE762A0050865A /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87774DC127EE762A0050865A /* DSColor.swift */; };
 		87774DC427EE77120050865A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87774DC327EE77120050865A /* Colors.xcassets */; };
 		87774DC627EE78480050865A /* DSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87774DC527EE78480050865A /* DSLabel.swift */; };
-		87DFDFC027ED26530007249B /* ContactServiceStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFBF27ED26530007249B /* ContactServiceStub.swift */; };
+		879F832127F6649600E49B4D /* TransferCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F832027F6649600E49B4D /* TransferCoordinator.swift */; };
+		879F832327F6657000E49B4D /* TransferFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879F832227F6657000E49B4D /* TransferFactory.swift */; };
+		87DFDFC027ED26530007249B /* ContactUseCaseStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFBF27ED26530007249B /* ContactUseCaseStub.swift */; };
 		87DFDFC227ED28A40007249B /* ContactListFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC127ED28A40007249B /* ContactListFactory.swift */; };
 		87DFDFC527ED29730007249B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC427ED29730007249B /* Network.swift */; };
 		87DFDFC727ED2E900007249B /* ContactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87DFDFC627ED2E900007249B /* ContactRequest.swift */; };
@@ -81,7 +83,9 @@
 		87774DC127EE762A0050865A /* DSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColor.swift; sourceTree = "<group>"; };
 		87774DC327EE77120050865A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		87774DC527EE78480050865A /* DSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSLabel.swift; sourceTree = "<group>"; };
-		87DFDFBF27ED26530007249B /* ContactServiceStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactServiceStub.swift; sourceTree = "<group>"; };
+		879F832027F6649600E49B4D /* TransferCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferCoordinator.swift; sourceTree = "<group>"; };
+		879F832227F6657000E49B4D /* TransferFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferFactory.swift; sourceTree = "<group>"; };
+		87DFDFBF27ED26530007249B /* ContactUseCaseStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUseCaseStub.swift; sourceTree = "<group>"; };
 		87DFDFC127ED28A40007249B /* ContactListFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListFactory.swift; sourceTree = "<group>"; };
 		87DFDFC427ED29730007249B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		87DFDFC627ED2E900007249B /* ContactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRequest.swift; sourceTree = "<group>"; };
@@ -225,7 +229,7 @@
 			children = (
 				87FECB7C27EBDBAF00A67AF8 /* ContactListSpy.swift */,
 				87FECB7E27EBDC0700A67AF8 /* ContactListTests.swift */,
-				87DFDFBF27ED26530007249B /* ContactServiceStub.swift */,
+				87DFDFBF27ED26530007249B /* ContactUseCaseStub.swift */,
 			);
 			path = ContactList;
 			sourceTree = "<group>";
@@ -348,6 +352,8 @@
 			children = (
 				98584AD3277E50430028DBEA /* TransfersView.swift */,
 				98584AD4277E50430028DBEA /* TransfersViewController.swift */,
+				879F832027F6649600E49B4D /* TransferCoordinator.swift */,
+				879F832227F6657000E49B4D /* TransferFactory.swift */,
 			);
 			path = Transfers;
 			sourceTree = "<group>";
@@ -566,6 +572,8 @@
 				87DFDFC727ED2E900007249B /* ContactRequest.swift in Sources */,
 				981B4F5F27D9342C00603253 /* SampleView.swift in Sources */,
 				98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */,
+				879F832327F6657000E49B4D /* TransferFactory.swift in Sources */,
+				879F832127F6649600E49B4D /* TransferCoordinator.swift in Sources */,
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
 				3DF63A4927EAB46C00ED5D53 /* ContactListModel.swift in Sources */,
@@ -606,7 +614,7 @@
 				98584A84277E32C60028DBEA /* FinanceAppTests.swift in Sources */,
 				87FECB7F27EBDC0700A67AF8 /* ContactListTests.swift in Sources */,
 				BE208A0627F27612000F8B35 /* NetworkTests.swift in Sources */,
-				87DFDFC027ED26530007249B /* ContactServiceStub.swift in Sources */,
+				87DFDFC027ED26530007249B /* ContactUseCaseStub.swift in Sources */,
 				BE208A0827F2764D000F8B35 /* NetworkStub.swift in Sources */,
 				87FECB7D27EBDBAF00A67AF8 /* ContactListSpy.swift in Sources */,
 			);
