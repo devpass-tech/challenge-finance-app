@@ -38,4 +38,9 @@ class HomeViewController: UIViewController {
     override func loadView() {
         self.view = HomeView()
     }
+    func tappedActivityDetails() {
+        let activity = ActivityDetailsViewController()
+        
+        navigationController?.pushViewController(activity, animated: true)
+    }
 }
