@@ -72,7 +72,7 @@ private extension HomeView {
     }
 }
 
-extension HomeView: UITableViewDataSource {
+extension HomeView: UITableViewDataSource , UITableViewDelegate {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
@@ -85,6 +85,9 @@ extension HomeView: UITableViewDataSource {
         cell.textLabel?.text = self.activities[indexPath.row]
         
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
 }
 
