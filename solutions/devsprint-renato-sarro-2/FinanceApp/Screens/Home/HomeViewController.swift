@@ -17,17 +17,17 @@ class HomeViewController: UIViewController {
     }()
 
     override func viewDidLoad() {
-
-        navigationItem.title = "Finance App"
-        navigationController?.navigationBar.prefersLargeTitles = true
         
         service.fetchHomeData { [activityView] data in
             let summary = ActivitySummaryInfo(balance: "\(data.balance)",
                                               savings: "\(data.savings)",
                                               spending: "\(data.spending)")
             
-            activityView.updateInfo(with: data.activity.map { $0.name },
+            activityView.updateInfo(with: data.activity.map { $0 },
                                     summaryInfo: summary)
+            
+            let activity = ActivityView()
+            
         }
     }
 

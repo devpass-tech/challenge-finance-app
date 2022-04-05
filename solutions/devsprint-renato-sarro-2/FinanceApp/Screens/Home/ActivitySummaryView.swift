@@ -31,8 +31,6 @@ final class ActivitySummaryView: UIView, ViewConfiguration, ActivitySummaryProto
     
     lazy var amountLabel: UILabel = {
         let label =  UILabel()
-        label.text = "$15,459.27"
-//        label.frame = CGRect(x: 0, y: 0, width: 374, height: 41)
         label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         label.font = .systemFont(ofSize: 34, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -59,6 +57,8 @@ final class ActivitySummaryView: UIView, ViewConfiguration, ActivitySummaryProto
     
     lazy var savingsLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        label.font = .systemFont(ofSize: 17, weight: .bold)
         label.text = "Savings"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -66,7 +66,6 @@ final class ActivitySummaryView: UIView, ViewConfiguration, ActivitySummaryProto
     
     lazy var amountSavingsLabel: UILabel = {
         let label = UILabel()
-        label.text = "$1000"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -90,6 +89,8 @@ final class ActivitySummaryView: UIView, ViewConfiguration, ActivitySummaryProto
     
     lazy var spendingLabel: UILabel = {
         let label = UILabel()
+        label.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        label.font = .systemFont(ofSize: 17, weight: .bold)
         label.text = "Spending"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -97,7 +98,6 @@ final class ActivitySummaryView: UIView, ViewConfiguration, ActivitySummaryProto
     
     lazy var amountSpedingLabel: UILabel = {
         let label = UILabel()
-        label.text = "$500"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -118,8 +118,8 @@ final class ActivitySummaryView: UIView, ViewConfiguration, ActivitySummaryProto
 
     func updateInfo(with info: ActivitySummaryInfo) {
         amountLabel.text = info.balance
-        savingsLabel.text = info.savings
-        spendingLabel.text = info.spending
+        amountSavingsLabel.text = info.savings
+        amountSpedingLabel.text = info.spending
     }
     
     func configViews() {
@@ -148,14 +148,19 @@ final class ActivitySummaryView: UIView, ViewConfiguration, ActivitySummaryProto
         NSLayoutConstraint.activate([
             headerStack.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
             headerStack.bottomAnchor.constraint(equalTo: bottomAnchor),
-            headerStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            headerStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 20),
+            headerStack.leadingAnchor.constraint(equalTo: leadingAnchor),
+            headerStack.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            amountLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             
             savingsView.widthAnchor.constraint(equalToConstant: 24),
             savingsView.heightAnchor.constraint(equalToConstant: 24),
+            savingsView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+            amountSavingsLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
             
             spendingView.widthAnchor.constraint(equalToConstant: 24),
-            spendingView.heightAnchor.constraint(equalToConstant: 24)
+            spendingView.heightAnchor.constraint(equalToConstant: 24),
+            spendingView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
         ])
         
     }

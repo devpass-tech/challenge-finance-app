@@ -11,8 +11,14 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = HomeViewController()
+        window?.makeKeyAndVisible()
+        //código para termos uma view que será nossa view raiz contendo nossa HomeViewController principal. Verificar com o Renato/Henrique se é necessária
 
         return true
     }
