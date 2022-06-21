@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B106640286145CA00FC0D97 /* ContactListDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10663F286145CA00FC0D97 /* ContactListDataSourceDelegate.swift */; };
+		5B10664328614F3E00FC0D97 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10664228614F3E00FC0D97 /* ConfigurableView.swift */; };
+		5B106647286154DF00FC0D97 /* ContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B106646286154DF00FC0D97 /* ContactCellView.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
 		98584A76277E32C50028DBEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98584A75277E32C50028DBEA /* Assets.xcassets */; };
@@ -51,6 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B10663F286145CA00FC0D97 /* ContactListDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListDataSourceDelegate.swift; sourceTree = "<group>"; };
+		5B10664228614F3E00FC0D97 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
+		5B106646286154DF00FC0D97 /* ContactCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellView.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98584A6E277E32C30028DBEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B10663E286145A000FC0D97 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				5B10663F286145CA00FC0D97 /* ContactListDataSourceDelegate.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		5B10664128614F1800FC0D97 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				5B10664228614F3E00FC0D97 /* ConfigurableView.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		5B106645286154BC00FC0D97 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5B106646286154DF00FC0D97 /* ContactCellView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		98584A60277E32C30028DBEA = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +159,7 @@
 		98584A6B277E32C30028DBEA /* FinanceApp */ = {
 			isa = PBXGroup;
 			children = (
+				5B10664128614F1800FC0D97 /* Utility */,
 				98584A9D277E351B0028DBEA /* Resources */,
 				98584A9C277E350D0028DBEA /* AppDelegate */,
 				98584A9E277E35700028DBEA /* Screens */,
@@ -261,6 +292,8 @@
 		98584B08277E602C0028DBEA /* ContactList */ = {
 			isa = PBXGroup;
 			children = (
+				5B106645286154BC00FC0D97 /* Cell */,
+				5B10663E286145A000FC0D97 /* DataSource */,
 				98584B19277E60740028DBEA /* ContactListView.swift */,
 				98584B1A277E60740028DBEA /* ContactListViewController.swift */,
 			);
@@ -426,11 +459,14 @@
 				98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */,
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
+				5B106640286145CA00FC0D97 /* ContactListDataSourceDelegate.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
+				5B106647286154DF00FC0D97 /* ContactCellView.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
+				5B10664328614F3E00FC0D97 /* ConfigurableView.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
 				98584AED277E50430028DBEA /* UserProfileView.swift in Sources */,
 			);
