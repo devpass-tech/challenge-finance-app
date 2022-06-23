@@ -10,17 +10,23 @@ import UIKit
 class ContactCellView: UITableViewCell, ConfigurableView {
    static let identifier = "ContactCellIdentifier"
 
-   private var container: UIView = {
-       let container = UIView(frame: .zero)
+   private lazy var container: UIStackView = {
+       let container = UIStackView(frame: .zero)
        container.translatesAutoresizingMaskIntoConstraints = false
+       container.spacing = 16
+       container.alignment = .center
+       container.addArrangedSubview(contactImage)
+       container.addArrangedSubview(labelsStackView)
        return container
     }()
 
-    private var labelsStackView: UIStackView = {
+    private lazy var labelsStackView: UIStackView = {
         let stack = UIStackView(frame: .zero)
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.spacing = 2
+        stack.addArrangedSubview(contactNameLabel)
+        stack.addArrangedSubview(contactPhoneLabel)
         return stack
     }()
 
@@ -58,34 +64,25 @@ class ContactCellView: UITableViewCell, ConfigurableView {
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+        return nil
     }
 }
 
 extension ContactCellView {
 
     func initSubviews() {
-        
-        container.addSubviews(contactImage, labelsStackView)
-        labelsStackView.addArrangedSubview(contactNameLabel)
-        labelsStackView.addArrangedSubview(contactPhoneLabel)
         addSubview(container)
     }
 
     func initConstraints() {
-
         NSLayoutConstraint.activate([
             container.topAnchor.constraint(equalTo: topAnchor),
             container.bottomAnchor.constraint(equalTo: bottomAnchor),
             container.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
             container.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
-            labelsStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            labelsStackView.leadingAnchor.constraint(equalTo: contactImage.trailingAnchor, constant: 8),
 
             contactImage.widthAnchor.constraint(equalToConstant: 50),
-            contactImage.heightAnchor.constraint(equalToConstant: 50),
-            contactImage.centerYAnchor.constraint(equalTo: centerYAnchor)
-
+            contactImage.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
 }

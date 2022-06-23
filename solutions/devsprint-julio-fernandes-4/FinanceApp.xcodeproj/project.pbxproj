@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B106640286145CA00FC0D97 /* ContactListDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10663F286145CA00FC0D97 /* ContactListDataSourceDelegate.swift */; };
 		5B10664328614F3E00FC0D97 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10664228614F3E00FC0D97 /* ConfigurableView.swift */; };
 		5B106647286154DF00FC0D97 /* ContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B106646286154DF00FC0D97 /* ContactCellView.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
@@ -54,7 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5B10663F286145CA00FC0D97 /* ContactListDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListDataSourceDelegate.swift; sourceTree = "<group>"; };
 		5B10664228614F3E00FC0D97 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		5B106646286154DF00FC0D97 /* ContactCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellView.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -112,14 +110,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5B10663E286145A000FC0D97 /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				5B10663F286145CA00FC0D97 /* ContactListDataSourceDelegate.swift */,
-			);
-			path = DataSource;
-			sourceTree = "<group>";
-		};
 		5B10664128614F1800FC0D97 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -293,7 +283,6 @@
 			isa = PBXGroup;
 			children = (
 				5B106645286154BC00FC0D97 /* Cell */,
-				5B10663E286145A000FC0D97 /* DataSource */,
 				98584B19277E60740028DBEA /* ContactListView.swift */,
 				98584B1A277E60740028DBEA /* ContactListViewController.swift */,
 			);
@@ -459,7 +448,6 @@
 				98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */,
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
-				5B106640286145CA00FC0D97 /* ContactListDataSourceDelegate.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
