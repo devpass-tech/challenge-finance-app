@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ContactCellView: UITableViewCell, ConfigurableView {
+final class ContactCellView: UITableViewCell, ConfigurableView {
    static let identifier = "ContactCellIdentifier"
 
    private lazy var container: UIStackView = {
@@ -63,7 +63,6 @@ class ContactCellView: UITableViewCell, ConfigurableView {
     }
 
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
         return nil
     }
 }
