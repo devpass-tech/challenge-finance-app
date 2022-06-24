@@ -7,9 +7,20 @@
 
 import UIKit
 
-class ConfirmationView: UIView {
-    
+final class ConfirmationView: UIView, ConfigurableView {
+
     //MARK: Elements Visual
+    private lazy var vStack: UIStackView = {
+        let stack = UIStackView(frame: .zero)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.alignment = .center
+        stack.addArrangedSubview(checkImage)
+        stack.addArrangedSubview(confirmationLabel)
+        
+        return stack
+     }()
+
     private lazy var checkImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -39,8 +50,6 @@ class ConfirmationView: UIView {
         
         return bt
     }()
-
-    
     
     //MARK: Inits
     override init(frame: CGRect) {
@@ -50,49 +59,44 @@ class ConfirmationView: UIView {
         setComponentsVisual()
     }
     
-    
-    
     //Obligatory
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
     
-    
-    
-    //MARK: Function - Components
+    //MARK: Init - Components
     private func setComponentsVisual () {
-        setConfirmationLabel()
-        setConfirmationButton()
+        initLayout()
+    }
+
+}
+
+
+//MARK: Components and Constraints
+extension ConfirmationView {
+    func initSubviews() {
+        addSubview(vStack)
+        addSubview(confirmationButton)
     }
     
-    
-    private func setConfirmationLabel() {
-        self.addSubview(checkImage)
-        self.addSubview(confirmationLabel)
-        
+    func initConstraints() {
+        NSLayoutConstraint.activate([
+            vStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            vStack.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+        ])
         
         NSLayoutConstraint.activate([
-            checkImage.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            checkImage.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             checkImage.heightAnchor.constraint(equalToConstant: 100),
             checkImage.widthAnchor.constraint(equalToConstant: 100),
-            
-            confirmationLabel.topAnchor.constraint(equalTo: checkImage.bottomAnchor, constant: 20),
-            confirmationLabel.centerXAnchor.constraint(equalTo: checkImage.centerXAnchor),
         ])
-    }
-    
-    
-    private func setConfirmationButton() {
-        self.addSubview(confirmationButton)
-        
+                
         NSLayoutConstraint.activate([
             confirmationButton.centerYAnchor.constraint(equalTo: confirmationButton.centerYAnchor),
             confirmationButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
-            
             confirmationButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
             confirmationButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
             confirmationButton.heightAnchor.constraint(equalToConstant: 60),
         ])
     }
+    
 }
