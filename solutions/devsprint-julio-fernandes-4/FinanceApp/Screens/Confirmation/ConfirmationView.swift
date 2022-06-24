@@ -15,6 +15,8 @@ final class ConfirmationView: UIView, ConfigurableView {
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.axis = .vertical
         stack.alignment = .center
+        stack.spacing = 5
+        stack.distribution = .fill
         stack.addArrangedSubview(checkImage)
         stack.addArrangedSubview(confirmationLabel)
         
@@ -81,8 +83,8 @@ extension ConfirmationView {
     
     func initConstraints() {
         NSLayoutConstraint.activate([
-            vStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            vStack.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            vStack.centerXAnchor.constraint(equalTo: centerXAnchor),
+            vStack.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
         
         NSLayoutConstraint.activate([
@@ -91,11 +93,11 @@ extension ConfirmationView {
         ])
                 
         NSLayoutConstraint.activate([
-            confirmationButton.centerYAnchor.constraint(equalTo: confirmationButton.centerYAnchor),
-            confirmationButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20),
-            confirmationButton.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
-            confirmationButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
-            confirmationButton.heightAnchor.constraint(equalToConstant: 60),
+            confirmationButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20),
+            confirmationButton.heightAnchor.constraint(equalToConstant: 44),
+            confirmationButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 20),
+            confirmationButton.rightAnchor.constraint(equalTo: rightAnchor, constant: -20),
+            
         ])
     }
     
