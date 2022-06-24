@@ -8,8 +8,18 @@
 import UIKit
 
 class ContactListViewController: UIViewController {
-
+    let container = ContactListView()
+    
     override func loadView() {
-        self.view = ContactListView()
+        container.delegate = self
+        self.view = container
+    }
+}
+
+// MARK: Delegate tableview protocol
+extension ContactListViewController: ContactListDelegateProtocol {
+    func selectContact() {
+        //TODO: Implement some action func
+        self.dismiss(animated: true)
     }
 }
