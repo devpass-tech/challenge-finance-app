@@ -7,9 +7,10 @@
 
 import UIKit
 
-class ActivityDetailsViewController: UIViewController {
-
-    override func loadView() {
-        self.view = ActivityDetailsView()
-    }
+final class ActivityDetailsViewController: UIViewController {
+    
+        override func loadView() {
+            self.view = ActivityDetailsView()
+        }
 }
+
