@@ -22,13 +22,13 @@ class HomeViewController: UIViewController {
         navigationItem.title = "Finance App"
         navigationController?.navigationBar.prefersLargeTitles = true
 
-        service.fetchHomeData { activities in
-
-            DispatchQueue.main.async {
-
-                self.homeView.updateView(with: activities)
-            }
-        }
+//        service.fetchHomeData { activities in
+//
+//            DispatchQueue.main.async {
+//
+//                self.homeView.updateView(with: activities)
+//            }
+//        }
     }
 
     override func loadView() {
