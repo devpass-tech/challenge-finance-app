@@ -8,9 +8,10 @@
 import UIKit
 
 final class ActivityDetailsViewController: UIViewController {
+    let container = ActivityDetailsView()
     
         override func loadView() {
-            self.view = ActivityDetailsView()
+            self.view = container
         }
 }
 

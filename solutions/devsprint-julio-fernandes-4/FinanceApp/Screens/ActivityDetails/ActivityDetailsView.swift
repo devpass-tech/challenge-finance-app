@@ -9,19 +9,43 @@ import UIKit
 
 class ActivityDetailsView: UIView {
     
-    //MARK: View Life Cycle
-    func setupView() {
-        backgroundColor = .white
-        addSubview(reportIssueButton)
-        addSubview(bagImage)
-        addSubview(mallLabel)
-        addSubview(shoppingLabel)
-        addSubview(valueLabel)
-        addSubview(hourLabel)
-        setupConstraints()
+    
+    // MARK: Init
+    init() {
+        super.init(frame: .zero)
+        self.backgroundColor = .white
+        initLayout()
     }
+
+    required init?(coder: NSCoder) {
+        return nil
+    }
+
     
     // MARK: Interface Elements
+    private lazy var vStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.alignment = .center
+        stack.spacing = 10
+        stack.axis = .vertical
+        stack.addArrangedSubview(bagImage)
+        stack.addArrangedSubview(mallLabel)
+        stack.addArrangedSubview(shoppingLabel)
+        return stack
+    }()
+    
+    private lazy var vCenterStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.alignment = .center
+        stack.spacing = 10
+        stack.axis = .vertical
+        stack.addArrangedSubview(valueLabel)
+        stack.addArrangedSubview(hourLabel)
+        return stack
+    }()
+    
     private lazy var bagImage: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
@@ -84,32 +108,39 @@ class ActivityDetailsView: UIView {
     @objc func tappedButton(sender: UIButton) {
         print("action disparada")
     }
+}
+
+
+extension ActivityDetailsView: ConfigurableView {
+    func initSubviews() {
+        addSubview(vStack)
+        addSubview(vCenterStack)
+        addSubview(reportIssueButton)
+    }
     
     // MARK: Interface Constraints
-    private func setupConstraints() {
+     func initConstraints() {
         NSLayoutConstraint.activate([
-            reportIssueButton.widthAnchor.constraint(equalToConstant: 300),
-            reportIssueButton.heightAnchor.constraint(equalToConstant: 50),
-            reportIssueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
-            reportIssueButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            vStack.topAnchor.constraint(equalTo: topAnchor, constant: 50),
+            vStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+            vStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
             
             bagImage.widthAnchor.constraint(equalToConstant: 150),
             bagImage.heightAnchor.constraint(equalToConstant: 150),
-            bagImage.topAnchor.constraint(equalTo: topAnchor, constant: 100),
-            bagImage.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            mallLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            mallLabel.topAnchor.constraint(equalTo: bagImage.bottomAnchor, constant: 20),
-            
-            shoppingLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            shoppingLabel.topAnchor.constraint(equalTo: mallLabel.bottomAnchor, constant: 10),
-            
-            valueLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            valueLabel.topAnchor.constraint(equalTo: shoppingLabel.bottomAnchor, constant: 100),
-            
-            hourLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            hourLabel.topAnchor.constraint(equalTo: valueLabel.bottomAnchor, constant: 5),
+        ])
+        
+        NSLayoutConstraint.activate([
+            vCenterStack.centerXAnchor.constraint(equalTo: centerXAnchor),
+            vCenterStack.centerYAnchor.constraint(equalTo: centerYAnchor),
+        ])
+        NSLayoutConstraint.activate([
+            reportIssueButton.heightAnchor.constraint(equalToConstant: 44),
+            reportIssueButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
+            reportIssueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
+            reportIssueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
+            reportIssueButton.centerXAnchor.constraint(equalTo: centerXAnchor),
         ])
     }
-
+    
+    
 }
