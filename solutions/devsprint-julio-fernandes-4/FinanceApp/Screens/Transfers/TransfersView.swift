@@ -65,7 +65,6 @@ class TransfersView: UIView {
         button.tintColor = .green
         button.backgroundColor = .systemGray5
         button.layer.cornerRadius = 20
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         
         return button
@@ -83,7 +82,7 @@ class TransfersView: UIView {
     
     init() {
         super.init(frame: .zero)
-        setupLayout()
+        setup()
     }
     
     required init?(coder: NSCoder) {
@@ -91,36 +90,67 @@ class TransfersView: UIView {
     }
 
     // MARK: - Functions
-    func didClickChooseContact() {}
+    func setup() {
+        setupLayout()
+        addTargets()
+    }
     
-    func didClickTransfer() {}
+    func addTargets() {
+        chooseContactButton.addTarget(self, action: #selector(didClickChooseContact), for: .touchUpInside)
+        transferButton.addTarget(self, action: #selector(didClickTransfer), for: .touchUpInside)
+        transferTextField.addTarget(self, action: #selector(didTransferTextFieldStartEditing(_:)), for: .allEditingEvents)
+    }
+    
+    @objc func didClickChooseContact() {}
+    
+    @objc func didClickTransfer() {}
+    
+    @objc func didTransferTextFieldStartEditing(_ sender: UITextField) {}
 }
 
 extension TransfersView {
     func setupLayout() {
         backgroundColor = .white
-        addSubview(transfersStackView)
-        addSubview(transferButton)
         
-        setupConstraints()
+        setupTransfersStackView()
+        transferButtonConstraints()
+        transferTextFieldConstraints()
+        chooseContactViewConstraints()
     }
     
     // MARK: - ViewCode Constraints
-    func setupConstraints() {
+    private func setupTransfersStackView() {
+        addSubview(transfersStackView)
+
         NSLayoutConstraint.activate([
             transfersStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             transfersStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
             transfersStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            transfersStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            
+            transfersStackView.trailingAnchor.constraint(equalTo: trailingAnchor)
+         ])
+    }
+    
+    private func transferButtonConstraints() {
+        addSubview(transferButton)
+
+        NSLayoutConstraint.activate([
             transferButton.heightAnchor.constraint(equalToConstant: 50),
             transferButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -16),
             transferButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
-            transferButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            
+            transferButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+        ])
+    }
+    
+    private func transferTextFieldConstraints() {
+        NSLayoutConstraint.activate([
             transferTextField.heightAnchor.constraint(equalToConstant: 40),
-            transferTextField.centerXAnchor.constraint(equalTo: transfersStackView.centerXAnchor),
+            transferTextField.centerXAnchor.constraint(equalTo: transfersStackView.centerXAnchor)
+        ])
+    }
+    
+    private func chooseContactViewConstraints() {
+        NSLayoutConstraint.activate([
             chooseContactStackView.heightAnchor.constraint(equalToConstant: 40)
-         ])
+        ])
     }
 }
