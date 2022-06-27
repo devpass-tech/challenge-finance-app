@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		5B10664328614F3E00FC0D97 /* ConfigurableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B10664228614F3E00FC0D97 /* ConfigurableView.swift */; };
 		5B106647286154DF00FC0D97 /* ContactCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B106646286154DF00FC0D97 /* ContactCellView.swift */; };
+		5BB724A32866630D002F998D /* ContactListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB724A22866630D002F998D /* ContactListModel.swift */; };
+		5BB724A52866657E002F998D /* FinanceEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB724A42866657E002F998D /* FinanceEndpoint.swift */; };
+		5BB724A7286665B0002F998D /* FinanceServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BB724A6286665B0002F998D /* FinanceServiceError.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
 		98584A76277E32C50028DBEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98584A75277E32C50028DBEA /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 /* Begin PBXFileReference section */
 		5B10664228614F3E00FC0D97 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		5B106646286154DF00FC0D97 /* ContactCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCellView.swift; sourceTree = "<group>"; };
+		5BB724A22866630D002F998D /* ContactListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListModel.swift; sourceTree = "<group>"; };
+		5BB724A42866657E002F998D /* FinanceEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceEndpoint.swift; sourceTree = "<group>"; };
+		5BB724A6286665B0002F998D /* FinanceServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinanceServiceError.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98584A6E277E32C30028DBEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -224,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				98584AC2277E42E80028DBEA /* FinanceService.swift */,
+				5BB724A42866657E002F998D /* FinanceEndpoint.swift */,
+				5BB724A6286665B0002F998D /* FinanceServiceError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -232,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				989627DC27ADC2BC0009A07F /* HomeModel.swift */,
+				5BB724A22866630D002F998D /* ContactListModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -439,6 +448,7 @@
 				98584AC3277E42E80028DBEA /* FinanceService.swift in Sources */,
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
+				5BB724A7286665B0002F998D /* FinanceServiceError.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
 				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
 				989627DD27ADC2BC0009A07F /* HomeModel.swift in Sources */,
@@ -452,9 +462,11 @@
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
+				5BB724A52866657E002F998D /* FinanceEndpoint.swift in Sources */,
 				5B106647286154DF00FC0D97 /* ContactCellView.swift in Sources */,
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
 				5B10664328614F3E00FC0D97 /* ConfigurableView.swift in Sources */,
+				5BB724A32866630D002F998D /* ContactListModel.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
 				98584AED277E50430028DBEA /* UserProfileView.swift in Sources */,
 			);

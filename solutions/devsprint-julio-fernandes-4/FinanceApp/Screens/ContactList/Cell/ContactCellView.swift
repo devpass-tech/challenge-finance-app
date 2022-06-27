@@ -43,7 +43,6 @@ final class ContactCellView: UITableViewCell, ConfigurableView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.text = "Full Name"
         return label
     }()
 
@@ -52,7 +51,6 @@ final class ContactCellView: UITableViewCell, ConfigurableView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .gray
         label.font = UIFont.systemFont(ofSize: 14)
-        label.text = "(99) 99999-9999"
         return label
     }()
 
@@ -64,6 +62,17 @@ final class ContactCellView: UITableViewCell, ConfigurableView {
 
     required init?(coder: NSCoder) {
         return nil
+    }
+    
+    override func prepareForReuse() {
+        contactImage.image = UIImage(named: "avatar-placeholder")
+        contactNameLabel.text = ""
+        contactPhoneLabel.text = ""
+    }
+    
+    func setupCell(contactList: ContactListModel) {
+        contactNameLabel.text = contactList.name
+        contactPhoneLabel.text = contactList.phone
     }
 }
 
