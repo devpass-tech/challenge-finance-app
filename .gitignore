@@ -58,6 +58,9 @@ Pods/
 
 Carthage/Build
 
+## XCodegen
+solutions/devsprint-julio-fernandes-4/*.xcodeproj/*
+
 # fastlane
 #
 # It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
