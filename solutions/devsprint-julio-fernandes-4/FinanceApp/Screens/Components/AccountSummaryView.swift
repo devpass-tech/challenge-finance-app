@@ -7,10 +7,9 @@
 
 import UIKit
 
-class AccountSummaryView: UIView {
-    
-    let ballSize:CGFloat = 15
-    
+final class AccountSummaryView: UIView, ConfigurableView {
+
+    // MARK:  UI Components
     private lazy var balanceTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -72,24 +71,25 @@ class AccountSummaryView: UIView {
         return label
     }()
     
-    var viewModel: AccountSummaryViewModel!
     
+    // MARK:  Private properties
+    private let ballSize:CGFloat = 15
+    private var viewModel: AccountSummaryViewModel
+    
+    
+    // MARK:  Inicialization
     init(viewModel: AccountSummaryViewModel) {
-        super.init(frame: .zero)
         self.viewModel = viewModel
-        configure()
-    }
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configure()
+        super.init(frame: .zero)
+        initLayout()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
     
-    func configure() {
+    // MARK:  Methods
+    func initSubviews() {
         addSubview(balanceTitleLabel)
         addSubview(greenBall)
         addSubview(savingsTitle)
@@ -97,44 +97,60 @@ class AccountSummaryView: UIView {
         addSubview(redBall)
         addSubview(spendingTitle)
         addSubview(spendingValue)
-        
+    }
+    
+    func setupAdditional() {
         balanceTitleLabel.text = viewModel.balance
         savingsValue.text = viewModel.savings
         spendingValue.text = viewModel.spending
-        
+    }
+    
+    func initConstraints() {
         let padding:CGFloat = 30
         
         NSLayoutConstraint.activate([
             balanceTitleLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: padding),
             balanceTitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             balanceTitleLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            balanceTitleLabel.heightAnchor.constraint(equalToConstant: 40),
-            
+            balanceTitleLabel.heightAnchor.constraint(equalToConstant: 40)
+        ])
+        
+        NSLayoutConstraint.activate([
             greenBall.topAnchor.constraint(equalTo: balanceTitleLabel.bottomAnchor, constant: 30),
             greenBall.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             greenBall.widthAnchor.constraint(equalToConstant: ballSize),
-            greenBall.heightAnchor.constraint(equalToConstant: ballSize),
-            
+            greenBall.heightAnchor.constraint(equalToConstant: ballSize)
+        ])
+        
+        NSLayoutConstraint.activate([
             savingsTitle.centerYAnchor.constraint(equalTo: greenBall.centerYAnchor),
             savingsTitle.leadingAnchor.constraint(equalTo: greenBall.trailingAnchor, constant: 8),
             savingsTitle.widthAnchor.constraint(equalToConstant: 250),
-            savingsTitle.heightAnchor.constraint(equalToConstant: 30),
-            
+            savingsTitle.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
             savingsValue.centerYAnchor.constraint(equalTo: greenBall.centerYAnchor),
             savingsValue.leadingAnchor.constraint(equalTo: savingsTitle.trailingAnchor, constant: 8),
             savingsValue.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
-            savingsValue.heightAnchor.constraint(equalToConstant: 30),
-            
+            savingsValue.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
             redBall.topAnchor.constraint(equalTo: greenBall.bottomAnchor, constant: 40),
             redBall.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: padding),
             redBall.widthAnchor.constraint(equalToConstant: ballSize),
-            redBall.heightAnchor.constraint(equalToConstant: ballSize),
-            
+            redBall.heightAnchor.constraint(equalToConstant: ballSize)
+        ])
+        
+        NSLayoutConstraint.activate([
             spendingTitle.centerYAnchor.constraint(equalTo: redBall.centerYAnchor),
             spendingTitle.leadingAnchor.constraint(equalTo: redBall.trailingAnchor, constant: 8),
             spendingTitle.widthAnchor.constraint(equalToConstant: 250),
-            spendingTitle.heightAnchor.constraint(equalToConstant: 30),
-            
+            spendingTitle.heightAnchor.constraint(equalToConstant: 30)
+        ])
+        
+        NSLayoutConstraint.activate([
             spendingValue.centerYAnchor.constraint(equalTo: redBall.centerYAnchor),
             spendingValue.leadingAnchor.constraint(equalTo: spendingTitle.trailingAnchor, constant: 8),
             spendingValue.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -padding),
