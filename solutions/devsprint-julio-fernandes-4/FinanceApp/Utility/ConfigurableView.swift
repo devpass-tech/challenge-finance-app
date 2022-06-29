@@ -11,13 +11,16 @@ public protocol ConfigurableView {
     func initLayout()
     func initSubviews()
     func initConstraints()
+    func setupAdditional()
 }
 
 public extension ConfigurableView {
     func initLayout() {
         initSubviews()
         initConstraints()
+        setupAdditional()
     }
+    func setupAdditional() { }
 }
 
 //MARK: UIView extension to add more than one subview

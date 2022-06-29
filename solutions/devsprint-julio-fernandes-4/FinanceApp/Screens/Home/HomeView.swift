@@ -17,6 +17,14 @@ final class HomeView: UIView {
     private let listViewCellIdentifier = "ListViewCellIdentifier"
 
     private var activities: [String] = []
+    
+    private lazy var accountSummaryView: AccountSummaryView = {
+        let view = AccountSummaryView.init(
+            viewModel: .init(balance: "$15,459.27", savings: "$1000", spending: "$500")
+        )
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     private lazy var tableView: UITableView = {
 
@@ -56,17 +64,21 @@ private extension HomeView {
     }
 
     func configureSubviews() {
-
+        self.addSubview(self.accountSummaryView)
         self.addSubview(self.tableView)
     }
 
     func configureSubviewsConstraints() {
 
         NSLayoutConstraint.activate([
+            self.accountSummaryView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
+            self.accountSummaryView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            self.accountSummaryView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            self.accountSummaryView.heightAnchor.constraint(equalToConstant: 200),
 
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
+            self.tableView.topAnchor.constraint(equalTo: self.accountSummaryView.bottomAnchor, constant: 20),
             self.tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
     }
