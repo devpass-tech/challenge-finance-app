@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ActivityDetailsView: UIView {
-    
+final class ActivityDetailsView: UIView {
     
     // MARK: Init
     init() {
@@ -16,11 +15,10 @@ class ActivityDetailsView: UIView {
         self.backgroundColor = .white
         initLayout()
     }
-
+    
     required init?(coder: NSCoder) {
         return nil
     }
-
     
     // MARK: Interface Elements
     private lazy var vStack: UIStackView = {
@@ -54,7 +52,7 @@ class ActivityDetailsView: UIView {
         image.tintColor = UIColor(red: 190/255, green: 81/255, blue: 255/255, alpha: 1)
         return image
     }()
-
+    
     private lazy var mallLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -110,7 +108,6 @@ class ActivityDetailsView: UIView {
     }
 }
 
-
 extension ActivityDetailsView: ConfigurableView {
     func initSubviews() {
         addSubview(vStack)
@@ -119,26 +116,32 @@ extension ActivityDetailsView: ConfigurableView {
     }
     
     // MARK: Interface Constraints
-     func initConstraints() {
+    func initConstraints() {
+        
+        let defaultConstraint: CGFloat = 50
+        let defaultConstraintNegative: CGFloat = -50
+        let bagImageSize: CGFloat = 150
+        
         NSLayoutConstraint.activate([
-            vStack.topAnchor.constraint(equalTo: topAnchor, constant: 50),
-            vStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
-            vStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
+            vStack.topAnchor.constraint(equalTo: topAnchor, constant: defaultConstraint),
+            vStack.leadingAnchor.constraint(equalTo: leadingAnchor, constant: defaultConstraint),
+            vStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: defaultConstraintNegative),
             
-            bagImage.widthAnchor.constraint(equalToConstant: 150),
-            bagImage.heightAnchor.constraint(equalToConstant: 150),
+            //Inside vStack
+            bagImage.widthAnchor.constraint(equalToConstant: bagImageSize),
+            bagImage.heightAnchor.constraint(equalToConstant: bagImageSize),
         ])
         
         NSLayoutConstraint.activate([
             vCenterStack.centerXAnchor.constraint(equalTo: centerXAnchor),
             vCenterStack.centerYAnchor.constraint(equalTo: centerYAnchor),
         ])
+        
         NSLayoutConstraint.activate([
             reportIssueButton.heightAnchor.constraint(equalToConstant: 44),
-            reportIssueButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -50),
-            reportIssueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50),
-            reportIssueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
-            reportIssueButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            reportIssueButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: defaultConstraintNegative),
+            reportIssueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: defaultConstraint),
+            reportIssueButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: defaultConstraintNegative),
         ])
     }
     

@@ -8,30 +8,41 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     private let service = FinanceService()
-
     private let homeView: HomeView = {
-
+        
         let homeView = HomeView()
         return homeView
     }()
-
+    
     override func viewDidLoad() {
-
+        
+        
         navigationItem.title = "Finance App"
         navigationController?.navigationBar.prefersLargeTitles = true
-
+        
         service.fetchHomeData { activities in
-
+            
             DispatchQueue.main.async {
-
+                
                 self.homeView.updateView(with: activities)
             }
         }
+        
     }
-
+    
     override func loadView() {
         self.view = homeView
+        homeView.delegate = self
     }
 }
+
+extension HomeViewController: HomeViewProtocol {
+    
+    func goToController() {
+        navigationController?.pushViewController(ActivityDetailsViewController(), animated: true)
+    }
+}
+
+
