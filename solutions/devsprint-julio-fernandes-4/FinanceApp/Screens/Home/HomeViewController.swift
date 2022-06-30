@@ -12,14 +12,13 @@ class HomeViewController: UIViewController {
     private let service = FinanceService()
     private let homeView: HomeView = {
         
-        let homeView = HomeView()
+       let homeView = HomeView()
         return homeView
     }()
     
     override func viewDidLoad() {
         
         
-        navigationItem.title = "Finance App"
         navigationController?.navigationBar.prefersLargeTitles = true
         
         service.fetchHomeData { activities in
@@ -40,7 +39,7 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: HomeViewProtocol {
     
-    func goToController() {
+    func goToActivityDetailsViewController() {
         navigationController?.pushViewController(ActivityDetailsViewController(), animated: true)
     }
 }

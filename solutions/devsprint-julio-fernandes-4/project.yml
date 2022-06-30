@@ -1,0 +1,81 @@
+#==================================================================================================
+# Xcodegen documentation
+# https://github.com/yonaskolb/XcodeGen/blob/master/Docs/ProjectSpec.md#target-scheme
+#==================================================================================================
+
+# Definimos o nome do projeto
+name: FinanceApp
+
+# Configuracoes de compilacao
+settings:
+  MARKETING_VERSION: "1.0.0"
+  SWIFT_VERSION: 5.0
+  VERSIONING_SYSTEM: "apple-generic"
+  CODE_SIGN_IDENTITY: "iPhone Developer"
+  ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES: "YES"
+  ARCHS: $(ARCHS_STANDARD)
+  
+options:
+  bundleIdPrefix: com.devpass
+  deploymentTarget:
+    iOS: 13.3
+
+targets:
+  FinanceApp:
+    type: application
+    platform: iOS
+    sources:
+      - FinanceApp
+    scheme:
+      testTargets:
+      - name: FinanceAppTests
+        randomExecutionOrder: true
+      - name: FinanceAppUITests
+        randomExecutionOrder: true
+      gatherCoverageData: true
+      coverageTargets:
+        - FinanceApp
+    settings:
+      configs:
+        Debug:
+          ONLY_ACTIVE_ARCH: NO
+    info:
+      path: FinanceApp/Resources/Info.plist
+      properties:
+        UISupportedInterfaceOrientations: []
+        NSAppTransportSecurity: true
+        UILaunchStoryboardName: LaunchScreen
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: false
+          UISceneConfigurations:
+            UIWindowSceneSessionRoleApplication:
+              - UISceneConfigurationName: Default Configuration
+                UISceneDelegateClassName: $(PRODUCT_MODULE_NAME).SceneDelegate
+
+  FinanceAppTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: FinanceAppTests
+        includes:
+          - "**/*.swift"
+
+    settings:
+      TEST_HOST: "$(BUILT_PRODUCTS_DIR)/FinanceApp.app/FinanceApp"
+
+    info:
+      path: FinanceAppTests/Info.plist
+
+  FinanceAppUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: FinanceAppUITests
+        includes:
+          - "**/*.swift"
+
+    settings:
+      TEST_TARGET_NAME: "FinanceApp"
+
+    info:
+      path: FinanceAppUITests/Info.plist
