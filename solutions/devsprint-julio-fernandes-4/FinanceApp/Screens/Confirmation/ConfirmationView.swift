@@ -9,7 +9,7 @@ import UIKit
 
 final class ConfirmationView: UIView, ConfigurableView {
 
-    //MARK: Elements Visual
+    //MARK: - Elements Visual
     private lazy var vStack: UIStackView = {
         let stack = UIStackView(frame: .zero)
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -53,12 +53,22 @@ final class ConfirmationView: UIView, ConfigurableView {
         return bt
     }()
     
-    //MARK: Inits
-    override init(frame: CGRect) {
+    // MARK: - Properties
+    var tapAction: Selector
+    var target: Any?
+    
+    
+    // MARK: - Inits
+    init(
+        selector: Selector,
+        target: Any?
+    ) {
+        self.tapAction = selector
+        self.target = target
         super.init(frame: .zero)
         backgroundColor = .white // backgroundColor View
         
-        setComponentsVisual()
+        setup()
     }
     
     //Obligatory
@@ -67,14 +77,14 @@ final class ConfirmationView: UIView, ConfigurableView {
     }
     
     //MARK: Init - Components
-    private func setComponentsVisual () {
+    private func setup () {
         initLayout()
+        addTargets()
     }
-
 }
 
 
-//MARK: Components and Constraints
+// MARK: - Components and Constraints
 extension ConfirmationView {
     func initSubviews() {
         addSubview(vStack)
@@ -101,4 +111,11 @@ extension ConfirmationView {
         ])
     }
     
+}
+
+// MARK: - Action Button
+extension ConfirmationView {
+    func addTargets() {
+        confirmationButton.addTarget(target, action: tapAction, for: .touchUpInside)
+    }
 }
