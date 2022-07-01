@@ -9,6 +9,7 @@ import UIKit
 
 
 protocol TransfersViewDelegate: AnyObject {
+    func ChooseContact()
     func transfersConfimation()
 }
 
@@ -166,7 +167,9 @@ extension TransfersView {
         transferTextField.addTarget(self, action: #selector(didTransferTextFieldStartEditing(_:)), for: .allEditingEvents)
     }
     
-    @objc private func didClickChooseContact() {}
+    @objc private func didClickChooseContact() {
+        delegate?.ChooseContact()
+    }
     
     @objc private func didClickTransfer() {
         delegate?.transfersConfimation()

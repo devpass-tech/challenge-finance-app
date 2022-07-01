@@ -25,6 +25,13 @@ final class TransfersViewController: UIViewController {
 
 // MARK: - Action Button
 extension TransfersViewController: TransfersViewDelegate {
+    func ChooseContact() {
+        let contactListViewController = ContactListViewController()
+        let rootContactListViewController = UINavigationController(rootViewController: contactListViewController)
+        
+        present(rootContactListViewController, animated: true)
+    }
+    
     func transfersConfimation() {
         let confimationViewController = ConfirmationViewController()
         
