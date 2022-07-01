@@ -7,9 +7,28 @@
 
 import UIKit
 
-class TransfersViewController: UIViewController {
 
+final class TransfersViewController: UIViewController {
+    
+    private lazy var transferView: TransfersView = {
+        let transferView = TransfersView()
+        transferView.delegate = self
+        
+        return transferView
+    }()
+    
     override func loadView() {
-        self.view = TransfersView()
+        self.view = transferView
+    }
+    
+}
+
+// MARK: - Action Button
+extension TransfersViewController: TransfersViewDelegate {
+    func transfersConfimation() {
+        let confimationViewController = ConfirmationViewController()
+        
+        present(confimationViewController, animated: true)
     }
 }
+

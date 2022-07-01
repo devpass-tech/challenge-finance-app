@@ -7,7 +7,15 @@
 
 import UIKit
 
-class TransfersView: UIView {
+
+protocol TransfersViewDelegate: AnyObject {
+    func transfersConfimation()
+}
+
+final class TransfersView: UIView {
+    
+    // MARK: - Delegates
+    weak var delegate: TransfersViewDelegate?
     
     // MARK: - ViewCode Components
     private lazy var transfersStackView: UIStackView = {
@@ -80,33 +88,27 @@ class TransfersView: UIView {
         return button
     }()
     
+    
+    // MARK: - Initialization
     init() {
         super.init(frame: .zero)
         setup()
     }
-    
+
+
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
+        return nil
     }
 
+    
     // MARK: - Functions
     func setup() {
         setupLayout()
         addTargets()
     }
     
-    func addTargets() {
-        chooseContactButton.addTarget(self, action: #selector(didClickChooseContact), for: .touchUpInside)
-        transferButton.addTarget(self, action: #selector(didClickTransfer), for: .touchUpInside)
-        transferTextField.addTarget(self, action: #selector(didTransferTextFieldStartEditing(_:)), for: .allEditingEvents)
-    }
-    
-    @objc func didClickChooseContact() {}
-    
-    @objc func didClickTransfer() {}
-    
-    @objc func didTransferTextFieldStartEditing(_ sender: UITextField) {}
 }
+
 
 extension TransfersView {
     func setupLayout() {
@@ -154,3 +156,23 @@ extension TransfersView {
         ])
     }
 }
+
+
+// MARK: - Action Button
+extension TransfersView {
+    func addTargets() {
+        chooseContactButton.addTarget(self, action: #selector(didClickChooseContact), for: .touchUpInside)
+        transferButton.addTarget(self, action: #selector(didClickTransfer), for: .touchUpInside)
+        transferTextField.addTarget(self, action: #selector(didTransferTextFieldStartEditing(_:)), for: .allEditingEvents)
+    }
+    
+    @objc private func didClickChooseContact() {}
+    
+    @objc private func didClickTransfer() {
+        delegate?.transfersConfimation()
+    }
+    
+    @objc private func didTransferTextFieldStartEditing(_ sender: UITextField) {}
+}
+    
+
