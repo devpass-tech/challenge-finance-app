@@ -22,7 +22,7 @@ final class HomeView: UIView {
 
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.register(ActivityCellView.self, forCellReuseIdentifier: self.listViewCellIdentifier)
         tableView.dataSource = self
         return tableView
     }()
@@ -81,8 +81,11 @@ extension HomeView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier)!
-        cell.textLabel?.text = self.activities[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier) as! ActivityCellView
+        
+        cell.setup(activityImage: nil, title: self.activities[indexPath.row])
+        
+//        cell.textLabel?.text = self.activities[indexPath.row]
         return cell
     }
 }

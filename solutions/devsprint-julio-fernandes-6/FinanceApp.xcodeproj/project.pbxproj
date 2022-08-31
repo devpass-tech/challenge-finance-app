@@ -33,6 +33,7 @@
 		98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */; };
 		F8F0DC9928BE1C35001C34EC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DC9828BE1C35001C34EC /* TabBarViewController.swift */; };
 		F8F0DC9B28BE4661001C34EC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DC9A28BE4661001C34EC /* LoadingView.swift */; };
+		F8F0DCA528BFB031001C34EC /* ActivityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DCA428BFB031001C34EC /* ActivityCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
 		F8F0DC9828BE1C35001C34EC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F8F0DC9A28BE4661001C34EC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F8F0DCA428BFB031001C34EC /* ActivityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 		98584A9F277E35780028DBEA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F8F0DCA428BFB031001C34EC /* ActivityCellView.swift */,
 				98584AA6277E35F10028DBEA /* HomeView.swift */,
 				98584AA4277E35E90028DBEA /* HomeViewController.swift */,
 			);
@@ -435,6 +438,7 @@
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
+				F8F0DCA528BFB031001C34EC /* ActivityCellView.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
