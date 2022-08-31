@@ -16,6 +16,8 @@ class HomeViewController: UIViewController {
         let homeView = HomeView()
         return homeView
     }()
+    
+    private let tabBarVC = UITabBarController()
 
     override func viewDidLoad() {
 
