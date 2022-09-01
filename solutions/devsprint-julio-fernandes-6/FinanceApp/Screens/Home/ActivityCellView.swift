@@ -9,14 +9,11 @@ import UIKit
 
 class ActivityCellView: UITableViewCell {
     
-//    static let cellIdentifier = "activityCellView"
-    
 //    MARK: - Building Cell Elements
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-//        label.textColor =
         label.font = .preferredFont(forTextStyle: .title1)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -31,7 +28,7 @@ class ActivityCellView: UITableViewCell {
         return label
     }()
     
-    lazy var activityImageView: UIImageView = {
+    private lazy var activityImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.clipsToBounds = true
@@ -69,10 +66,7 @@ class ActivityCellView: UITableViewCell {
         setupView()
     }
     
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setupView()
-    }
+    required init?(coder: NSCoder) { return nil }
     
     
 //    MARK: - Func to populate the cell
@@ -85,7 +79,7 @@ class ActivityCellView: UITableViewCell {
 
 //MARK: - Extension and Protocol
 
-extension ActivityCellView: ViewCodeCellProtocol {
+extension ActivityCellView: ViewCodeProtocol {
 //    To build on the view
     func buildViewHierarchy() {
         contentView.addSubview(stackHorizontalView)
@@ -102,25 +96,4 @@ extension ActivityCellView: ViewCodeCellProtocol {
     }
 }
 
-protocol ViewCodeCellProtocol {
-    func setupView()
-    func buildViewHierarchy()
-    func setupConstraints()
-    func setupAdditionalConfiguration()
-}
 
-extension ViewCodeCellProtocol {
-    func setupView() {
-        buildViewHierarchy()
-        setupConstraints()
-        setupAdditionalConfiguration()
-    }
-}
-
-extension ViewCodeCellProtocol where Self: UITableViewCell {
-    func setupAdditionalConfiguration() {
-        backgroundColor = .clear
-        contentView.backgroundColor = .clear
-        selectionStyle = .none
-    }
-}

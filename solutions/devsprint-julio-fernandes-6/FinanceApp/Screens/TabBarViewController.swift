@@ -9,29 +9,21 @@ import UIKit
 
 class TabBarViewController: UITabBarController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    override func viewWillAppear(_ animated: Bool) {
         self.setupTabBarViewController()
     }
     
     private func setupTabBarViewController() {
         
         let homeViewController = UINavigationController(rootViewController: HomeViewController())
+        let homeTabBar = UITabBarItem(title: "Home", image: UIImage(named: "house.fill"), tag: 0)
+        homeViewController.tabBarItem = homeTabBar
         
         let transferViewController = UINavigationController(rootViewController: TransfersViewController())
+        let transfersTabBar = UITabBarItem(title: "Transfers", image: UIImage(named: "arrow.up.arrow.down"), tag: 1)
+        transferViewController.tabBarItem = transfersTabBar
         
-        self.setViewControllers([homeViewController, transferViewController], animated: true)
-//        self.tabBar.backgroundColor = .white
-//        self.tabBar.isTranslucent = false
-        
-        guard let items = tabBar.items else { return }
-        
-        items[0].title = "Home"
-        items[0].image = UIImage(systemName: "house.fill")
-        
-        items[1].title = "Transfer"
-        items[1].image = UIImage(systemName: "arrow.up.arrow.down")
+        self.viewControllers = [homeViewController, transferViewController]
     }
 
 }

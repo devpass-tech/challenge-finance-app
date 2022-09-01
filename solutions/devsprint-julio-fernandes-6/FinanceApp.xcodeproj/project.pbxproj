@@ -34,6 +34,7 @@
 		F8F0DC9928BE1C35001C34EC /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DC9828BE1C35001C34EC /* TabBarViewController.swift */; };
 		F8F0DC9B28BE4661001C34EC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DC9A28BE4661001C34EC /* LoadingView.swift */; };
 		F8F0DCA528BFB031001C34EC /* ActivityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DCA428BFB031001C34EC /* ActivityCellView.swift */; };
+		F8F0DCA928C0BDA1001C34EC /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DCA828C0BDA1001C34EC /* ViewCodeProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		F8F0DC9828BE1C35001C34EC /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F8F0DC9A28BE4661001C34EC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F8F0DCA428BFB031001C34EC /* ActivityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellView.swift; sourceTree = "<group>"; };
+		F8F0DCA828C0BDA1001C34EC /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,7 +187,6 @@
 		98584A9E277E35700028DBEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				98584AF8277E511C0028DBEA /* Components */,
 				98584B08277E602C0028DBEA /* ContactList */,
 				98584ADF277E50430028DBEA /* Confirmation */,
 				98584AD1277E50430028DBEA /* Transfers */,
@@ -220,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				989627DC27ADC2BC0009A07F /* HomeModel.swift */,
+				F8F0DCA828C0BDA1001C34EC /* ViewCodeProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -249,13 +251,6 @@
 				98584AE2277E50430028DBEA /* ConfirmationViewController.swift */,
 			);
 			path = Confirmation;
-			sourceTree = "<group>";
-		};
-		98584AF8277E511C0028DBEA /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		98584B07277E5FF60028DBEA /* ActivityDetails */ = {
@@ -438,6 +433,7 @@
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
+				F8F0DCA928C0BDA1001C34EC /* ViewCodeProtocol.swift in Sources */,
 				F8F0DCA528BFB031001C34EC /* ActivityCellView.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
