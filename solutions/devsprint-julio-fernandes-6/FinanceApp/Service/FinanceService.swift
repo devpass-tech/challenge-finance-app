@@ -8,7 +8,7 @@
 import Foundation
 
 class FinanceService {
-
+    
     func fetchHomeData(completion: @escaping ([String]) -> Void) {
 
           guard let url = FinanceService.homeApiPath else { return }
@@ -31,4 +31,3 @@ class FinanceService {
       static let homeApiPath = URL(string:"https://raw.githubusercontent.com/devpass-tech/challenge-finance-app/main/api/home_endpoint.json")
 
   }
-
