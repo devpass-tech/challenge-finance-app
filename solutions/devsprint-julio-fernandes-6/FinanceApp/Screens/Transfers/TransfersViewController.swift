@@ -11,5 +11,6 @@ class TransfersViewController: UIViewController {
 
     override func loadView() {
         self.view = TransfersView()
+        
     }
 }

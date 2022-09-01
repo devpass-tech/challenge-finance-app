@@ -23,7 +23,6 @@ class FinanceService {
                 print(error.localizedDescription)
             }
             
-            
         }.resume()
     }
 }
