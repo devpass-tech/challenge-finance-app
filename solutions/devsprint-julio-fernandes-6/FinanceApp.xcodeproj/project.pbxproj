@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -37,7 +37,6 @@
 		B9561BF8038687A06276CF0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBDD4F9A9A9CDB22A655B952 /* Assets.xcassets */; };
 		C36AAB6FCB4E4A831C64A062 /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCF8122A4E60D40C5D68B2E /* ContactListViewController.swift */; };
 		E265DA050E4C70738092243B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31099C0C61DBA4B67FCDD2 /* AppDelegate.swift */; };
-		F9AAD4D3B5BBFC8BDC66C21D /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C053FD7D7C14A15313B01A1A /* TabbarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +62,6 @@
 		A3FABC85E2F05603BDFF59AD /* ActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListView.swift; sourceTree = "<group>"; };
 		A4DECFCAE91F461D2769C1BE /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		BC9F6E366A7601002FB9DC68 /* ActivityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellView.swift; sourceTree = "<group>"; };
-		C053FD7D7C14A15313B01A1A /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 		C4E4966B0D6C2A80E27566C6 /* FinanceAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = FinanceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5594E94102EF89B9DF5614B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		CCF1E92CFD456C9C322B28F6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -240,7 +238,6 @@
 		EEF43403831B9BE075F76E4F /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				C053FD7D7C14A15313B01A1A /* TabbarController.swift */,
 				3ECA0DCEAB493A865938BA6D /* TabbarViewController.swift */,
 			);
 			path = Main;
@@ -397,7 +394,6 @@
 				54F39EC1C1E0CB1FD8C24C65 /* SceneDelegate.swift in Sources */,
 				90C3B2330927FF873F089C09 /* String+Extensions.swift in Sources */,
 				7489D7C8B7952EDF6F2C0E27 /* TabBarViewController.swift in Sources */,
-				F9AAD4D3B5BBFC8BDC66C21D /* TabbarController.swift in Sources */,
 				5EBB9703B365B7AFFA65862F /* TabbarViewController.swift in Sources */,
 				AEEF7401EEA393DB1EFA7E4C /* TransfersView.swift in Sources */,
 				0CDD3BDFF0A732D15AFDF32B /* TransfersViewController.swift in Sources */,
