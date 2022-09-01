@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7267881028C0F84C006D9D62 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7267880F28C0F84C006D9D62 /* LoadingView.swift */; };
+		72D8501328C13EC600478641 /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D8501228C13EC600478641 /* ViewCodeProtocol.swift */; };
 		98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6C277E32C30028DBEA /* AppDelegate.swift */; };
 		98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98584A6E277E32C30028DBEA /* SceneDelegate.swift */; };
 		98584A76277E32C50028DBEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98584A75277E32C50028DBEA /* Assets.xcassets */; };
@@ -51,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7267880F28C0F84C006D9D62 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		72D8501228C13EC600478641 /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
 		98584A69277E32C30028DBEA /* FinanceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinanceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98584A6C277E32C30028DBEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98584A6E277E32C30028DBEA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +110,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7267880B28C0F672006D9D62 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7267880E28C0F82C006D9D62 /* Load */ = {
+			isa = PBXGroup;
+			children = (
+				7267880F28C0F84C006D9D62 /* LoadingView.swift */,
+			);
+			path = Load;
+			sourceTree = "<group>";
+		};
 		98584A60277E32C30028DBEA = {
 			isa = PBXGroup;
 			children = (
@@ -179,7 +198,8 @@
 		98584A9E277E35700028DBEA /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				98584AF8277E511C0028DBEA /* Components */,
+				7267880E28C0F82C006D9D62 /* Load */,
+				7267880B28C0F672006D9D62 /* Components */,
 				98584B08277E602C0028DBEA /* ContactList */,
 				98584ADF277E50430028DBEA /* Confirmation */,
 				98584AD1277E50430028DBEA /* Transfers */,
@@ -211,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				989627DC27ADC2BC0009A07F /* HomeModel.swift */,
+				72D8501228C13EC600478641 /* ViewCodeProtocol.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -240,13 +261,6 @@
 				98584AE2277E50430028DBEA /* ConfirmationViewController.swift */,
 			);
 			path = Confirmation;
-			sourceTree = "<group>";
-		};
-		98584AF8277E511C0028DBEA /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		98584B07277E5FF60028DBEA /* ActivityDetails */ = {
@@ -418,6 +432,7 @@
 				98584B10277E605F0028DBEA /* ActivityDetailsViewController.swift in Sources */,
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
+				72D8501328C13EC600478641 /* ViewCodeProtocol.swift in Sources */,
 				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
 				989627DD27ADC2BC0009A07F /* HomeModel.swift in Sources */,
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
@@ -427,6 +442,7 @@
 				98584AF3277E50430028DBEA /* ConfirmationView.swift in Sources */,
 				98584AEE277E50430028DBEA /* UserProfileViewController.swift in Sources */,
 				98584A6D277E32C30028DBEA /* AppDelegate.swift in Sources */,
+				7267881028C0F84C006D9D62 /* LoadingView.swift in Sources */,
 				98584A6F277E32C30028DBEA /* SceneDelegate.swift in Sources */,
 				98584AA7277E35F10028DBEA /* HomeView.swift in Sources */,
 				98584B1F277E60740028DBEA /* ContactListView.swift in Sources */,
