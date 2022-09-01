@@ -11,9 +11,8 @@ class HomeViewController: UIViewController {
 
     private let service = FinanceService()
 
-    private let homeView: HomeView = {
-
-        let homeView = HomeView()
+    private let homeView: ActivityListView = {
+        let homeView = ActivityListView()
         return homeView
     }()
 

@@ -35,6 +35,7 @@
 		F8F0DC9B28BE4661001C34EC /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DC9A28BE4661001C34EC /* LoadingView.swift */; };
 		F8F0DCA528BFB031001C34EC /* ActivityCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DCA428BFB031001C34EC /* ActivityCellView.swift */; };
 		F8F0DCA928C0BDA1001C34EC /* ViewCodeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DCA828C0BDA1001C34EC /* ViewCodeProtocol.swift */; };
+		F8F0DCAB28C0C149001C34EC /* ActivityListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F0DCAA28C0C149001C34EC /* ActivityListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,7 @@
 		F8F0DC9A28BE4661001C34EC /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F8F0DCA428BFB031001C34EC /* ActivityCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCellView.swift; sourceTree = "<group>"; };
 		F8F0DCA828C0BDA1001C34EC /* ViewCodeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeProtocol.swift; sourceTree = "<group>"; };
+		F8F0DCAA28C0C149001C34EC /* ActivityListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				F8F0DCA428BFB031001C34EC /* ActivityCellView.swift */,
+				F8F0DCAA28C0C149001C34EC /* ActivityListView.swift */,
 				98584AA6277E35F10028DBEA /* HomeView.swift */,
 				98584AA4277E35E90028DBEA /* HomeViewController.swift */,
 			);
@@ -423,6 +426,7 @@
 				98584B20277E60740028DBEA /* ContactListViewController.swift in Sources */,
 				98584AF4277E50430028DBEA /* ConfirmationViewController.swift in Sources */,
 				98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */,
+				F8F0DCAB28C0C149001C34EC /* ActivityListView.swift in Sources */,
 				F8F0DC9B28BE4661001C34EC /* LoadingView.swift in Sources */,
 				989627DD27ADC2BC0009A07F /* HomeModel.swift in Sources */,
 				98584AE8277E50430028DBEA /* TransfersViewController.swift in Sources */,
