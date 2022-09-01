@@ -22,8 +22,6 @@ class FinanceService {
             } catch {
                 print(error.localizedDescription)
             }
-            
-            
         }.resume()
     }
 }
