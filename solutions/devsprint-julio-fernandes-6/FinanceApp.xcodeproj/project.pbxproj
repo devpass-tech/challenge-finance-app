@@ -31,7 +31,7 @@
 		989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989627DF27ADC2F60009A07F /* DebugViewController.swift */; };
 		98C8A4D927C8152200A630ED /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4D827C8152200A630ED /* String+Extensions.swift */; };
 		98C8A4DB27C815C000A630ED /* UITableViewCell+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */; };
-		B7EFF7A628BEDF2A006E7EF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFF7A528BEDF2A006E7EF4 /* MainViewController.swift */; };
+		B7EFF7A628BEDF2A006E7EF4 /* TabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EFF7A528BEDF2A006E7EF4 /* TabbarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,7 +80,7 @@
 		989627DF27ADC2F60009A07F /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
 		98C8A4D827C8152200A630ED /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		98C8A4DA27C815C000A630ED /* UITableViewCell+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extensions.swift"; sourceTree = "<group>"; };
-		B7EFF7A528BEDF2A006E7EF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		B7EFF7A528BEDF2A006E7EF4 /* TabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -290,7 +290,7 @@
 		B7EFF7A428BEDEFB006E7EF4 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				B7EFF7A528BEDF2A006E7EF4 /* MainViewController.swift */,
+				B7EFF7A528BEDF2A006E7EF4 /* TabbarController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -444,7 +444,7 @@
 				989627E027ADC2F60009A07F /* DebugViewController.swift in Sources */,
 				98584AA5277E35E90028DBEA /* HomeViewController.swift in Sources */,
 				98584AED277E50430028DBEA /* UserProfileView.swift in Sources */,
-				B7EFF7A628BEDF2A006E7EF4 /* MainViewController.swift in Sources */,
+				B7EFF7A628BEDF2A006E7EF4 /* TabbarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
