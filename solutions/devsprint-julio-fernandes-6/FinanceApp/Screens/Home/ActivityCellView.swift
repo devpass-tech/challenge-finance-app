@@ -9,12 +9,12 @@ import UIKit
 
 class ActivityCellView: UITableViewCell {
     
-//    MARK: - Building Cell Elements
+    static let cellIdentifier = "ActivityCellView"
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-        label.font = .preferredFont(forTextStyle: .title1)
+        label.font = .preferredFont(forTextStyle: .title3)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -31,8 +31,6 @@ class ActivityCellView: UITableViewCell {
     private lazy var activityImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = imageView.frame.height / 2
         return imageView
     }()
     
@@ -40,7 +38,6 @@ class ActivityCellView: UITableViewCell {
         let stack = UIStackView()
         stack.distribution = .fill
         stack.axis = .vertical
-        stack.spacing = 8
         stack.addArrangedSubview(titleLabel)
         stack.addArrangedSubview(detailLabel)
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -58,39 +55,35 @@ class ActivityCellView: UITableViewCell {
         return stack
     }()
     
-//    MARK: - Init the Cell
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupView()
+    required init?(coder: NSCoder) {
+        return nil
     }
     
-    required init?(coder: NSCoder) { return nil }
-    
-    
-//    MARK: - Func to populate the cell
-    func setup(activityImage: UIImage?, title: String, price: Float = 100, time: String = "8:57 am" ) {
-        activityImageView.image = activityImage ?? UIImage(systemName: "heart.circle.fill")
+    init(title: String, price: Float = 100, time: String = "8:57 am") {
+        super.init(style: .default, reuseIdentifier: ActivityCellView.cellIdentifier)
+        setupView()
+        activityImageView.image = UIImage(systemName: "heart.circle.fill")
         titleLabel.text = title
         detailLabel.text = String.activityDetails(with: price, and: time)
+        
     }
 }
 
 //MARK: - Extension and Protocol
-
 extension ActivityCellView: ViewCodeProtocol {
-//    To build on the view
+
     func buildViewHierarchy() {
         contentView.addSubview(stackHorizontalView)
     }
     
-//    Constrains
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackHorizontalView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            stackHorizontalView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
             stackHorizontalView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            stackHorizontalView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
-            stackHorizontalView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16)
+            stackHorizontalView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
+            stackHorizontalView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
+            activityImageView.widthAnchor.constraint(equalToConstant: 60),
+            activityImageView.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
 }
