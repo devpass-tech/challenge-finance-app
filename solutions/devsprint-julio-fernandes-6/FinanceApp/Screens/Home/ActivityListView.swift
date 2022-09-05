@@ -14,14 +14,13 @@ import UIKit
 
 final class ActivityListView: UIView {
 
-    private let listViewCellIdentifier = "ListViewCellIdentifier"
-
-    private var activities: [String] = []
+    private var activities: [UITableViewCell] = []
 
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(ActivityCellView.self, forCellReuseIdentifier: self.listViewCellIdentifier)
+        tableView.register(ActivityCellView.self, forCellReuseIdentifier: ActivityCellView.cellIdentifier)
+        tableView.register(ActivityInfoCellView.self, forCellReuseIdentifier: ActivityInfoCellView.cellIdentifier)
         tableView.dataSource = self
         return tableView
     }()
@@ -36,7 +35,8 @@ final class ActivityListView: UIView {
     }
 
     func updateView(with activities: [String]) {
-        self.activities = activities
+        self.activities.append(ActivityInfoCellView(style: .default, reuseIdentifier: ActivityInfoCellView.cellIdentifier))
+        self.activities.append(contentsOf: activities.map { title in return ActivityCellView(title: title) })
         self.tableView.reloadData()
     }
 }
@@ -49,7 +49,6 @@ extension ActivityListView: ViewCodeProtocol {
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-
             self.tableView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             self.tableView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             self.tableView.topAnchor.constraint(equalTo: self.topAnchor),
@@ -65,16 +64,10 @@ extension ActivityListView: ViewCodeProtocol {
 extension ActivityListView: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
         return self.activities.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell = tableView.dequeueReusableCell(withIdentifier: self.listViewCellIdentifier) as! ActivityCellView
-        
-        cell.setup(activityImage: nil, title: self.activities[indexPath.row])
-        
-        return cell
+        return activities[indexPath.row]
     }
 }
