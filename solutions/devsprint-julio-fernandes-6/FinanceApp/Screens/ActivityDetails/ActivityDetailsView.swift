@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+//TODO: Revisão
 class ActivityDetailsView: UIView {
     
     lazy var iconInfoVStack = UIStackView()

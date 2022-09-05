@@ -11,6 +11,6 @@ class TransfersViewController: UIViewController {
 
     override func loadView() {
         self.view = TransfersView()
-        
+        self.view.backgroundColor = .white
     }
 }
