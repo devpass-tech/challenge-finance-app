@@ -9,24 +9,18 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-    private let service = FinanceService()
-
+    var service: FinanceServiceInterface = FinanceService()
+    
     private let homeView: ActivityListView = {
         let homeView = ActivityListView()
         return homeView
     }()
     
-    private let tabBarVC = UITabBarController()
-
     override func viewDidLoad() {
-
         navigationItem.title = "Finance App"
         navigationController?.navigationBar.prefersLargeTitles = true
-
         service.fetchHomeData { activities in
-
             DispatchQueue.main.async {
-
                 self.homeView.updateView(with: activities)
             }
         }
