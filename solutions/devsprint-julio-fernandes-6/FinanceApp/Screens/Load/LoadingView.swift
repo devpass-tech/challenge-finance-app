@@ -9,9 +9,13 @@ import UIKit
 
 class LoadingView: UIView, ViewCodeProtocol {
     func buildViewHierarchy() {
+        self.addSubview(self.descriptionLabel)
+        self.addSubview(self.activityIndicator)
+        self.setupConstraints()
     }
     
     func setupAdditionalConfiguration() {
+        backgroundColor = .white
     }
     
     lazy var descriptionLabel: UILabel = {
@@ -34,18 +38,11 @@ class LoadingView: UIView, ViewCodeProtocol {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.setupViews()
+        self.buildViewHierarchy()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setupViews() {
-        backgroundColor = .white
-        self.addSubview(self.descriptionLabel)
-        self.addSubview(self.activityIndicator)
-        self.setupConstraints()
     }
     
     func setupConstraints() {
