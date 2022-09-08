@@ -4,7 +4,6 @@
 //
 //  Created by Joao Gripp on 01/09/22.
 //
-
 import UIKit
 
 protocol ViewCodeProtocol {
