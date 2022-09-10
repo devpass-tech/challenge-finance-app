@@ -6,142 +6,145 @@
 //
 
 import UIKit
-//TODO: Revisão
-class ActivityDetailsView: UIView {
+
+protocol ActivityDetailsViewDelegate: AnyObject {
+    func didPressReportIssueButton()
+}
+
+final class ActivityDetailsView: UIView {
     
-    lazy var iconInfoVStack = UIStackView()
+    private lazy var iconInfoVStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = 3
+        stack.alignment = .center
+        stack.addArrangedSubview(categoryIcon)
+        stack.addArrangedSubview(activityNameLabel)
+        stack.addArrangedSubview(activityCategoryLabel)
+        return stack
+    }()
     
-    lazy var categoryIcon = UIImageView()
-    lazy var activityNameLabel = UILabel()
-    lazy var activityCategoryLabel = UILabel()
+    private lazy var categoryIcon: UIImageView = {
+        let image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.image = UIImage(named: "bag.circle.fill")
+        image.tintColor = .systemPurple
+        return image
+    }()
     
-    lazy var amountInformationVStack = UIStackView()
-    lazy var amountLabel = UILabel()
-    lazy var timeLabel = UILabel()
+    private lazy var activityNameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 18.0)
+        return label
+    }()
     
-    lazy var reportIssueButton = UIButton(type: .system)
+    private lazy var activityCategoryLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Shopping"
+        label.textColor = .systemGray2
+        return label
+    }()
+    
+    private lazy var amountInformationVStack: UIStackView = {
+        let stack = UIStackView()
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.axis = .vertical
+        stack.spacing = 8
+        stack.alignment = .center
+        stack.addArrangedSubview(amountLabel)
+        stack.addArrangedSubview(timeLabel)
+        return stack
+    }()
+    
+    private lazy var amountLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.boldSystemFont(ofSize: 30)
+        return label
+    }()
+    
+    private lazy var timeLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .systemGray2
+        return label
+    }()
+    
+    private lazy var reportIssueButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Report a issue", for: [])
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
+        button.addTarget(self, action: #selector(reportIssueButtonAction), for: .touchUpInside)
+        button.tintColor = .white
+        button.backgroundColor = .systemBlue
+        button.clipsToBounds = true
+        button.layer.cornerRadius = 8
+        return button
+    }()
+    
+    weak var delegate: ActivityDetailsViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        setupLayout()
-        setupStyle()
+        setupView()
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        return nil
     }
     
 }
 
-
-extension ActivityDetailsView {
+// MARK: ViewCodeProtocol
+extension ActivityDetailsView: ViewCodeProtocol {
     
-    private func setupLayout() {
-        //        MARK: - Add views sections
-        
+    func buildViewHierarchy() {
         addSubview(iconInfoVStack)
-        iconInfoVStack.addArrangedSubview(categoryIcon)
-        iconInfoVStack.addArrangedSubview(activityNameLabel)
-        iconInfoVStack.addArrangedSubview(activityCategoryLabel)
-        
         addSubview(amountInformationVStack)
-        amountInformationVStack.addArrangedSubview(amountLabel)
-        amountInformationVStack.addArrangedSubview(timeLabel)
-        
         addSubview(reportIssueButton)
-        
-        
+    }
+    
+    func setupConstraints() {
         NSLayoutConstraint.activate([
-            
-            //        MARK: - Setup vStack constraints
             iconInfoVStack.topAnchor.constraint(equalToSystemSpacingBelow: safeAreaLayoutGuide.topAnchor, multiplier: 12),
-            iconInfoVStack.widthAnchor.constraint(equalToConstant: 100),
+            iconInfoVStack.widthAnchor.constraint(equalToConstant: 200),
             iconInfoVStack.centerXAnchor.constraint(equalTo: centerXAnchor),
-            
-            //            MARK: - Setup categoryIcon constraints
             categoryIcon.widthAnchor.constraint(equalToConstant: 80),
             categoryIcon.heightAnchor.constraint(equalToConstant: 80),
-            
-            //            MARK: - Setup amountInformationVStack constraints
-            
             amountInformationVStack.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             amountInformationVStack.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            
-            //            MARK: - Setup reportIssueButton constraints
-            
             reportIssueButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
             reportIssueButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             reportIssueButton.heightAnchor.constraint(equalToConstant: 45),
             reportIssueButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 80),
             reportIssueButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -80)
-            
-
-            
-            
         ])
     }
     
-    private func setupStyle() {
+    func setupAdditionalConfiguration() {
         backgroundColor = .white
-        
-        //      MARK:  - Stack view
-        
-        iconInfoVStack.translatesAutoresizingMaskIntoConstraints = false
-        iconInfoVStack.axis = .vertical
-        iconInfoVStack.spacing = 3
-        iconInfoVStack.alignment = .center
-        
-        //        MARK: - Icon view
-        
-        categoryIcon.translatesAutoresizingMaskIntoConstraints = false
-        categoryIcon.image = UIImage(named: "bag.circle.fill")
-        categoryIcon.tintColor = .systemPurple
-        
-        //       MARK: - activityNameLabel view
-        
-        activityNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        activityNameLabel.text = "Mall"
-        activityNameLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
-        
-        
-        //        MARK: - activityCategoryLabel view
-        
-        activityCategoryLabel.translatesAutoresizingMaskIntoConstraints = false
-        activityCategoryLabel.text = "Shopping"
-        activityCategoryLabel.textColor = .systemGray2
-        
-        //        MARK: - amountInformationVStack view
-        
-        amountInformationVStack.translatesAutoresizingMaskIntoConstraints = false
-        amountInformationVStack.axis = .vertical
-        amountInformationVStack.spacing = 8
-        amountInformationVStack.alignment = .center
-        
-        //        MARK: - amountLabel view
-        
-        amountLabel.translatesAutoresizingMaskIntoConstraints = false
-        amountLabel.text = "$100.00"
-        amountLabel.font = UIFont.boldSystemFont(ofSize: 30)
-        
-        //        MARK: - timeLabel view
-        
-        timeLabel.translatesAutoresizingMaskIntoConstraints = false
-        timeLabel.text = "8:57 AM"
-        timeLabel.textColor = .systemGray2
-        
-        //        MARK: - reportIssueButton view
-        
-        reportIssueButton.translatesAutoresizingMaskIntoConstraints = false
-        reportIssueButton.setTitle("Report a issue", for: [])
-        reportIssueButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
-        reportIssueButton.tintColor = .white
-        reportIssueButton.backgroundColor = .systemBlue
-        reportIssueButton.clipsToBounds = true
-        reportIssueButton.layer.cornerRadius = 8
+    }
+    
+}
 
-        
-        
-        
+// MARK: Actions
+extension ActivityDetailsView {
+    
+    @objc func reportIssueButtonAction() {
+        delegate?.didPressReportIssueButton()
+    }
+    
+}
+
+// MARK: Setup
+extension ActivityDetailsView {
+    func setupView(activity: Activity) {
+        activityNameLabel.text = activity.name
+        amountLabel.text = "$\(activity.price)"
+        timeLabel.text = activity.time
     }
 }

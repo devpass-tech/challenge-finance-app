@@ -7,9 +7,33 @@
 
 import UIKit
 
-class UserProfileViewController: UIViewController {
+final class UserProfileViewController: UIViewController {
+    
+    // deixamos como "var" e sem ser private para que possamos nos testes injetar um Mock
+    var service: FinanceServiceProtocol = FinanceService()
 
-    override func loadView() {
-        self.view = UserProfileView()
+    private lazy var userProfileView: UserProfileView = {
+        let view = UserProfileView()
+        return view
+    }()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        fetchData()
     }
+    
+    override func loadView() {
+        self.view = userProfileView
+    }
+    
+    private func fetchData() {
+        service.load(endpoint: .userProfile, callbackQueue: .main) { [weak self] (response: Result<UserProfileModel, FinanceServiceError>) in
+            switch response {
+            case let .success(dto): self?.userProfileView.render(.buildPersonalData(dto))
+            case .failure: break
+            }
+        }
+    }
+    
 }
+
