@@ -7,9 +7,23 @@
 
 import UIKit
 
-class ConfirmationViewController: UIViewController {
+final class ConfirmationViewController: UIViewController {
 
+    private lazy var confirmationView: ConfirmationView = {
+        let view = ConfirmationView()
+        view.delegate = self
+        return view
+    }()
+    
     override func loadView() {
-        self.view = ConfirmationView()
+        self.view = confirmationView
+    }
+    
+}
+
+// MARK: ConfirmationViewDelegate
+extension ConfirmationViewController: ConfirmationViewDelegate {
+    func didPressNiceButton() {
+        dismiss(animated: true)
     }
 }

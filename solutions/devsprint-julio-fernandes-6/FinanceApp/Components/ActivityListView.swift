@@ -1,38 +1,36 @@
 //
-//  ContactListView.swift
+//  ActivityListView.swift
 //  FinanceApp
 //
-//  Created by Rodrigo Borges on 30/12/21.
+//  Created by Joao Gripp on 01/09/22.
 //
 
 import UIKit
 
-protocol ContactListViewDelegate: AnyObject {
-    func didPressContact()
+protocol ActivityListViewDelegate: AnyObject {
+    func didSelectedActivity(_ activity: Activity)
 }
 
-final class ContactListView: UIView {
+final class ActivityListView: UIView {
 
-    let cellSize = CGFloat(82)
-
-    private let cellIdentifier = "ContactCellIdentifier"
-
-    private lazy var tableView: UITableView = {
+    private(set) lazy var tableView: UITableView = {
         let tableView = UITableView(frame: .zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.register(ContactCellView.self, forCellReuseIdentifier: self.cellIdentifier)
+        tableView.register(ActivityCellView.self, forCellReuseIdentifier: cellIdentifier)
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
     }()
     
-    var contacts: [ContactModel] = [] {
+    var activities: [Activity] = [] {
         didSet {
             tableView.reloadData()
         }
     }
     
-    weak var delegate: ContactListViewDelegate?
+    weak var delegate: ActivityListViewDelegate?
+    static let cellSize = CGFloat(82)
+    private let cellIdentifier = "ActivityCellIdentifier"
 
     init() {
         super.init(frame: .zero)
@@ -45,8 +43,7 @@ final class ContactListView: UIView {
 }
 
 // MARK: ViewCodeProtocol
-extension ContactListView: ViewCodeProtocol {
-    
+extension ActivityListView: ViewCodeProtocol {
     func buildViewHierarchy() {
         addSubview(tableView)
     }
@@ -62,47 +59,43 @@ extension ContactListView: ViewCodeProtocol {
     
     func setupAdditionalConfiguration() {
         backgroundColor = .white
-        tableView.reloadData()
+        tableView.separatorStyle = .none
     }
-    
+
 }
 
 // MARK: UITableViewDataSource
-extension ContactListView: UITableViewDataSource {
+extension ActivityListView: UITableViewDataSource {
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Activity"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return activities.count
     }
 
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ContactCellView
-        cell.setupCell(contacts[indexPath.row])
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ActivityCellView
+        cell.setupCell(activity: activities[indexPath.row])
         return cell
     }
 }
 
 // MARK: UITableViewDelegate
-extension ContactListView: UITableViewDelegate {
+extension ActivityListView: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return cellSize
+        return ActivityListView.cellSize
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        delegate?.didPressContact()
+        tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.didSelectedActivity(activities[indexPath.row])
     }
 }
 
-// MARK: Setup view
-extension ContactListView {
-    
-    enum RenderType {
-        case buildContactList(_ list: [ContactModel])
-    }
-
-    func render(_ type: ContactListView.RenderType) {
-        switch type {
-        case let .buildContactList(dto): contacts = dto
-        }
-    }
-}

@@ -7,10 +7,31 @@
 
 import UIKit
 
-class TransfersViewController: UIViewController {
+final class TransfersViewController: UIViewController {
 
+    private lazy var transfersView: TransfersView = {
+        let view = TransfersView()
+        view.delegate = self
+        return view
+    }()
+    
     override func loadView() {
-        self.view = TransfersView()
-        self.view.backgroundColor = .white
+        self.view = transfersView
     }
+    
+}
+
+extension TransfersViewController: TransferViewDelegate {
+    
+    func didPressChooseContactButton() {
+        let controller = ContactListViewController()
+        showDetailViewController(controller, sender: self)
+    }
+    
+    func didPressTransferButton() {
+        let controller = ConfirmationViewController()
+        showDetailViewController(controller, sender: self)
+    }
+    
+    
 }

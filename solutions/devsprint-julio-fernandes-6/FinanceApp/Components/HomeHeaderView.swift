@@ -1,22 +1,23 @@
 //
-//  ActivityInfoCellView.swift
+//  HomeHeaderView.swift
 //  FinanceApp
 //
-//  Created by Julio Fernandes on 01/09/22.
+//  Created by Julio Fernandes on 10/09/22.
 //
 
 import UIKit
 
-class ActivityInfoCellView: UITableViewCell {
+final class HomeHeaderView: UIView {
     
-    static let cellIdentifier = "ActivityInfoCellView"
-    
+    let viewSize: CGFloat = 8
+
     private lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.spacing = 16
         stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         stackView.addArrangedSubview(label)
         stackView.addArrangedSubview(savingsStackView)
         stackView.addArrangedSubview(spendingStackView)
@@ -34,9 +35,9 @@ class ActivityInfoCellView: UITableViewCell {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.distribution = .fill
         stackView.alignment = .center
         stackView.spacing = 8
+        stackView.distribution = .fillProportionally
         stackView.addArrangedSubview(savingsView)
         stackView.addArrangedSubview(savingsLabel)
         stackView.addArrangedSubview(savingsValueLabel)
@@ -46,7 +47,6 @@ class ActivityInfoCellView: UITableViewCell {
     private lazy var savingsView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 4
         view.backgroundColor = .green
         return view
     }()
@@ -60,7 +60,6 @@ class ActivityInfoCellView: UITableViewCell {
 
     private lazy var savingsValueLabel: UILabel = {
         let label = UILabel()
-        label.text = "$100.00"
         label.textColor = .lightGray
         label.textAlignment = .right
         return label
@@ -70,23 +69,22 @@ class ActivityInfoCellView: UITableViewCell {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.distribution = .fill
         stackView.alignment = .center
         stackView.spacing = 8
+        stackView.distribution = .fillProportionally
         stackView.addArrangedSubview(spendingView)
         stackView.addArrangedSubview(spendingLabel)
         stackView.addArrangedSubview(spendingValueLabel)
         return stackView
     }()
-
+    
     private lazy var spendingView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.layer.cornerRadius = 4
         view.backgroundColor = .red
         return view
     }()
-    
+
     private lazy var spendingLabel: UILabel = {
         let label = UILabel()
         label.text = "Spending"
@@ -96,48 +94,51 @@ class ActivityInfoCellView: UITableViewCell {
 
     private lazy var spendingValueLabel: UILabel = {
         let label = UILabel()
-        label.text = "$100.00"
         label.textColor = .lightGray
         label.textAlignment = .right
         return label
     }()
-    
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+
+    init() {
+        super.init(frame: .zero)
         setupView()
     }
-    
+
     required init?(coder: NSCoder) {
         return nil
     }
-    
 }
 
-//MARK: - Extension and Protocol
-extension ActivityInfoCellView: ViewCodeProtocol {
-
+// MARK: ViewCodeProtocol
+extension HomeHeaderView: ViewCodeProtocol {
     func buildViewHierarchy() {
-        contentView.addSubview(stackView)
+        addSubview(stackView)
     }
     
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8),
-            stackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -8),
-            stackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            
+            stackView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
+            stackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            stackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
+            savingsView.widthAnchor.constraint(equalToConstant: viewSize),
+            savingsView.heightAnchor.constraint(equalToConstant: viewSize),
+            spendingView.widthAnchor.constraint(equalToConstant: viewSize),
+            spendingView.heightAnchor.constraint(equalToConstant: viewSize),
         ])
-        
-        NSLayoutConstraint.activate([
-            savingsView.widthAnchor.constraint(equalToConstant: 8),
-            savingsView.heightAnchor.constraint(equalToConstant: 8),
-        ])
-        
-        NSLayoutConstraint.activate([
-            spendingView.widthAnchor.constraint(equalToConstant: 8),
-            spendingView.heightAnchor.constraint(equalToConstant: 8),
-        ])
-        
+    }
+    
+    func setupAdditionalConfiguration() {
+        backgroundColor = .white
+        savingsView.layer.cornerRadius = viewSize / 2
+        spendingView.layer.cornerRadius = viewSize / 2
+    }
+}
+
+extension HomeHeaderView {
+    func setupView(balance: Float, savings: Float, spending: Float) {
+        label.text = "$\(balance)"
+        savingsValueLabel.text = "$\(savings)"
+        spendingValueLabel.text = "$\(spending)"
     }
 }

@@ -7,33 +7,64 @@
 
 import Foundation
 
-protocol FinanceServiceInterface {
-    func fetchHomeData(completion: @escaping ([String]) -> Void)
+protocol FinanceServiceProtocol {
+    func load<T: Decodable>(endpoint: FinanceEndpoint, callbackQueue: DispatchQueue, completion: @escaping (Result<T, FinanceServiceError>) -> Void)
+    func cancel()
 }
 
-class FinanceService: FinanceServiceInterface {
+final class FinanceService {
     
-    func fetchHomeData(completion: @escaping ([String]) -> Void) {
+    private var session: URLSession
+    private var dataTask: URLSessionDataTask?
+    
+    init(session: URLSession = .shared) {
+        self.session = session
+    }
+    
+    private func baseURL(_ endpoint: FinanceEndpoint) -> String {
+        return "https://raw.githubusercontent.com/devpass-tech/challenge-viper-finance/main/api/\(endpoint.rawValue).json"
+    }
+    
+}
+
+extension FinanceService: FinanceServiceProtocol {
+    func load<T: Decodable>(endpoint: FinanceEndpoint, callbackQueue: DispatchQueue, completion: @escaping (Result<T, FinanceServiceError>) -> Void) {
         
-        guard let url = FinanceService.homeApiPath else { return }
+        guard let url = URL(string: baseURL(endpoint)) else {
+            callbackQueue.safeAsync { completion(.failure(FinanceServiceError.invalidURL)) }
+            return
+        }
         
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else { return }
-            
-            do {
-                let homeData = try JSONDecoder().decode(HomeModel.self, from: data)
-                completion(homeData.activity.map({$0.name}))
-            } catch {
-                print(error.localizedDescription)
+        let request = URLRequest(url: url)
+
+        dataTask = session.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                callbackQueue.safeAsync { completion(.failure(FinanceServiceError.invalidData)) }
+                return
             }
             
-        }.resume()
+            guard let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
+                callbackQueue.safeAsync { completion(.failure(FinanceServiceError.decode)) }
+                return
+            }
+            
+            callbackQueue.safeAsync { completion(.success(decodedData)) }
+        }
+
+        dataTask?.resume()
+    }
+
+    func cancel() {
+        dataTask?.cancel()
     }
 }
 
-extension FinanceService {
-    
-    static let homeApiPath = URL(string:"https://raw.githubusercontent.com/devpass-tech/challenge-finance-app/main/api/home_endpoint.json")
-    
-    
+enum FinanceEndpoint: String {
+    case home = "home_endpoint"
+    case contactList = "contact_list_endpoint"
+    case userProfile = "user_profile_endpoint"
+}
+
+enum FinanceServiceError: Error {
+    case decode, invalidData, invalidURL
 }

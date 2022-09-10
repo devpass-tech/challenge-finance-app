@@ -7,14 +7,10 @@
 
 import UIKit
 
-class TabBarViewController: UITabBarController {
+final class TabBarViewController: UITabBarController {
 
     override func viewWillAppear(_ animated: Bool) {
-        self.setupTabBarViewController()
-    }
-    
-    private func setupTabBarViewController() {
-        
+        super.viewWillAppear(animated)
         let homeViewController = UINavigationController(rootViewController: HomeViewController())
         let homeTabBar = UITabBarItem(title: "Home", image: UIImage(named: "house.fill"), tag: 0)
         homeViewController.tabBarItem = homeTabBar
@@ -23,7 +19,6 @@ class TabBarViewController: UITabBarController {
         let transfersTabBar = UITabBarItem(title: "Transfers", image: UIImage(named: "arrow.up.arrow.down"), tag: 1)
         transferViewController.tabBarItem = transfersTabBar
         
-        self.viewControllers = [homeViewController, transferViewController]
+        viewControllers = [homeViewController, transferViewController]
     }
-
 }
